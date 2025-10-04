@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zinara Digital Marketing Agency - Your Digital Growth Simplified.">
-    <title>Zinara Digital Marketing Agency</title>
+    <title>Zinara Digital Marketing Agency - Your Digital Growth. Simplified.</title>
     <style>
         * {
             margin: 0;
@@ -20,13 +19,13 @@
             --lime-green: #7FB800;
             --white: #FFFFFF;
             --light-gray: #F5F5F5;
-            --hero-bg: #EDDFE0;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--charcoal);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -35,8 +34,9 @@
             padding: 0 20px;
         }
 
+        /* Header & Navigation */
         header {
-            background: var(--primary-dark);
+            background: #00303F;
             color: var(--white);
             padding: 1rem 0;
             position: fixed;
@@ -55,6 +55,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
+            color: var(--white);
         }
 
         .logo span {
@@ -64,67 +65,67 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.2rem;
+            gap: 2rem;
         }
 
         .nav-links a {
             color: var(--white);
             text-decoration: none;
-            font-size: 0.9rem;
+            transition: color 0.3s;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
             color: var(--secondary-orange);
         }
 
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
+        /* Main Content Area */
         main {
             margin-top: 70px;
         }
 
         section {
             display: none;
-            padding: 80px 0;
             min-height: 100vh;
+            padding: 80px 0;
         }
 
         section.active {
             display: block;
         }
 
+        /* Hero Section */
         .hero {
-            background: var(--hero-bg);
+            background: #EDDFE0;
+            color: var(--charcoal);
             text-align: center;
             padding: 120px 20px;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .hero h1 {
-            font-size: 3rem;
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
             color: var(--primary-teal);
-            margin-bottom: 1rem;
         }
 
-        .hero .tagline {
-            font-size: 1.3rem;
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--secondary-orange);
-            margin-bottom: 1rem;
         }
 
-        .hero p {
-            font-size: 1.1rem;
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--charcoal);
         }
 
         .cta-button {
@@ -133,8 +134,9 @@
             padding: 15px 40px;
             border: none;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
             display: inline-block;
             font-weight: bold;
@@ -143,6 +145,60 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-content h2 {
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-mission {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-teal);
+        }
+
+        .vision-mission h3 {
+            color: var(--primary-teal);
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-teal);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: var(--primary-teal);
+            margin-bottom: 1rem;
         }
 
         .section-title {
@@ -154,52 +210,211 @@
 
         .section-subtitle {
             text-align: center;
+            color: var(--charcoal);
             margin-bottom: 3rem;
             font-size: 1.1rem;
         }
 
-        .grid {
+        /* Success Story Section */
+        .success-story {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .success-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .success-content {
             display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--secondary-orange);
+            font-style: italic;
+        }
+
+        .testimonial footer {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--primary-teal);
+            font-style: normal;
+        }
+
+        .metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .metric-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--lime-green);
+        }
+
+        .metric-label {
+            color: var(--charcoal);
+            font-size: 1.1rem;
+        }
+
+        /* Who We Serve Section */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .card {
+        .client-card {
             background: var(--white);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        .client-card:hover {
+            transform: scale(1.05);
         }
 
-        .card h3 {
+        .client-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .client-card h3 {
             color: var(--primary-teal);
             margin-bottom: 1rem;
         }
 
+        /* Why Choose Section */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .benefit-number {
+            background: var(--primary-teal);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            color: var(--primary-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: var(--primary-teal);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-orange);
+        }
+
+        .contact-form {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--primary-teal);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--primary-teal);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
         footer {
-            background: var(--primary-dark);
+            background: #00303F;
             color: var(--white);
             padding: 3rem 0 1rem;
             margin-top: 4rem;
         }
 
-        .footer-grid {
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             margin-bottom: 2rem;
         }
 
@@ -214,6 +429,29 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
         @media (max-width: 968px) {
             .menu-toggle {
                 display: block;
@@ -225,34 +463,118 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: var(--primary-dark);
+                background: #00303F;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 2rem;
-                transition: left 0.3s;
+                transition: left 0.3s ease;
+                z-index: 999;
             }
 
             .nav-links.active {
                 left: 0;
             }
 
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
             .nav-links a {
+                display: block;
+                padding: 1rem;
                 font-size: 1.2rem;
             }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .about-grid,
+            .success-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .grid {
+            .services-grid,
+            .clients-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 80px 20px;
+                min-height: 80vh;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .success-story {
+                padding: 2rem;
+            }
+
+            .metric-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .service-card,
+            .client-card {
+                padding: 1.5rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -266,19 +588,18 @@
                 <li><a href="#" onclick="showSection('home'); closeMenu()">Home</a></li>
                 <li><a href="#" onclick="showSection('about'); closeMenu()">About</a></li>
                 <li><a href="#" onclick="showSection('services'); closeMenu()">Services</a></li>
-                <li><a href="#" onclick="showSection('portfolio'); closeMenu()">Portfolio</a></li>
-                <li><a href="#" onclick="showSection('casestudies'); closeMenu()">Case Studies</a></li>
-                <li><a href="#" onclick="showSection('testimonials'); closeMenu()">Testimonials</a></li>
-                <li><a href="#" onclick="showSection('pricing'); closeMenu()">Pricing</a></li>
-                <li><a href="#" onclick="showSection('blog'); closeMenu()">Blog</a></li>
+                <li><a href="#" onclick="showSection('success'); closeMenu()">Success Stories</a></li>
+                <li><a href="#" onclick="showSection('clients'); closeMenu()">Who We Serve</a></li>
+                <li><a href="#" onclick="showSection('why'); closeMenu()">Why Choose Us</a></li>
                 <li><a href="#" onclick="showSection('contact'); closeMenu()">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- Home Section -->
         <section id="home" class="hero active">
-            <div>
+            <div class="hero-content">
                 <h1>Zinara Digital Marketing Agency</h1>
                 <p class="tagline">Your Digital Growth. Simplified.</p>
                 <p>Born from friendship, vision, and a relentless belief that every African entrepreneur deserves to be seen, heard, and celebrated.</p>
@@ -286,195 +607,269 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about">
             <div class="container">
                 <h2 class="section-title">About Zinara</h2>
                 <p class="section-subtitle">More than an agency — we are a growth partner</p>
-                <p>Zinara Digital Marketing Agency was born from friendship, vision, and a relentless belief that every African entrepreneur deserves to be seen, heard, and celebrated. We combine the power of authentic storytelling, AI-driven marketing, and local market insight to transform the passion of entrepreneurs into digital growth that is simple, sustainable, and scalable.</p>
+                
+                <div class="about-grid">
+                    <div class="about-content">
+                        <p style="margin-bottom: 1.5rem;">Zinara Digital Marketing Agency was born from friendship, vision, and a relentless belief that every African entrepreneur deserves to be seen, heard, and celebrated. As three founders who witnessed countless small businesses struggle for visibility, we created Zinara to be more than an agency—we are a growth partner.</p>
+                        <p>We combine the power of authentic storytelling, AI-driven marketing, and local market insight to transform the passion of entrepreneurs into digital growth that is simple, sustainable, and scalable. Rooted in Africa, designed for the world, Zinara ensures that no story goes unheard, no dream unseen, and no business left behind.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="vision-mission" style="margin-bottom: 2rem;">
+                            <h3>Our Vision</h3>
+                            <p>Entrepreneurs empowered, small businesses thriving, and brands made visible.</p>
+                        </div>
+                        <div class="vision-mission">
+                            <h3>Our Mission</h3>
+                            <p>To amplify business stories through smart digital marketing that builds trust and drives growth.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services">
             <div class="container">
                 <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive digital solutions</p>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>Digital Marketing Strategy</h3>
-                        <p>Tailored growth strategies for entrepreneurs and small businesses.</p>
+                <p class="section-subtitle">Comprehensive digital solutions tailored for your growth</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Digital Marketing Strategy Development</h3>
+                        <p>Tailored growth strategies for entrepreneurs and small businesses that drive measurable results.</p>
                     </div>
-                    <div class="card">
-                        <h3>Social Media Management</h3>
-                        <p>Consistent, engaging storytelling across major platforms.</p>
+                    
+                    <div class="service-card">
+                        <h3>Social Media Management & Content Creation</h3>
+                        <p>Consistent, engaging storytelling across major platforms that connects with your audience.</p>
                     </div>
-                    <div class="card">
-                        <h3>SEO Optimization</h3>
-                        <p>Improving online visibility through optimized content.</p>
+                    
+                    <div class="service-card">
+                        <h3>Search Engine Optimization (SEO)</h3>
+                        <p>Improving online visibility through optimized content and strategic keyword placement.</p>
                     </div>
-                    <div class="card">
-                        <h3>Brand Storytelling</h3>
-                        <p>Crafting powerful brand stories that resonate.</p>
+                    
+                    <div class="service-card">
+                        <h3>Brand Storytelling & Digital Narratives</h3>
+                        <p>Crafting powerful brand stories that resonate with audiences and build lasting connections.</p>
                     </div>
-                    <div class="card">
-                        <h3>Digital Campaigns</h3>
-                        <p>Targeted campaigns that drive engagement.</p>
+                    
+                    <div class="service-card">
+                        <h3>Targeted Digital Campaigns</h3>
+                        <p>Paid campaigns designed to amplify brand voice and drive measurable engagement.</p>
                     </div>
-                    <div class="card">
-                        <h3>AI-Driven Solutions</h3>
-                        <p>Automation tools and virtual assistants.</p>
+                    
+                    <div class="service-card">
+                        <h3>Affordable Marketing Solutions</h3>
+                        <p>Customized strategies designed for budget-conscious small businesses.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Performance Monitoring & Optimization</h3>
+                        <p>Tracking and analyzing campaigns for consistent growth and improvement.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Website & Online Platform Support</h3>
+                        <p>Building credible digital presences through websites and optimized platforms.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>AI-Driven Growth Solutions</h3>
+                        <p>WhatsApp marketing funnels, automation tools, and virtual assistants for efficient growth.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>AI Training & Digital Transformation</h3>
+                        <p>We don't just use AI—we teach others how to use it for simplified growth and productivity.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio">
+        <!-- Success Stories Section -->
+        <section id="success">
             <div class="container">
-                <h2 class="section-title">Our Portfolio</h2>
-                <p class="section-subtitle">Recent projects</p>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>🛍️ Elan Bags</h3>
-                        <p>Social media transformation for boutique fashion brand.</p>
-                    </div>
-                    <div class="card">
-                        <h3>☕ Nairobi Coffee House</h3>
-                        <p>SEO optimization increasing foot traffic by 80%.</p>
-                    </div>
-                    <div class="card">
-                        <h3>💼 TechStart Kenya</h3>
-                        <p>Digital transformation and AI implementation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="casestudies">
-            <div class="container">
-                <h2 class="section-title">Case Studies</h2>
+                <h2 class="section-title">Success Stories</h2>
                 <p class="section-subtitle">Real results for real businesses</p>
-                <div class="card" style="margin-bottom: 2rem;">
-                    <h3>Elan Bags - 150% Sales Growth</h3>
-                    <p><strong>Challenge:</strong> Struggled to connect with fashion-conscious customers online.</p>
-                    <p><strong>Solution:</strong> Revitalized social media with visual stories and targeted campaigns.</p>
-                    <p style="margin-top: 1rem; color: var(--lime-green); font-size: 1.5rem; font-weight: bold;">150% online sales increase in 3 months</p>
-                </div>
-                <div class="card">
-                    <h3>Nairobi Coffee House - 80% Traffic Boost</h3>
-                    <p><strong>Challenge:</strong> Needed to increase foot traffic in competitive market.</p>
-                    <p><strong>Solution:</strong> Local SEO strategy and community-focused campaigns.</p>
-                    <p style="margin-top: 1rem; color: var(--lime-green); font-size: 1.5rem; font-weight: bold;">80% foot traffic increase in 4 months</p>
+                
+                <div class="success-story">
+                    <div class="success-header">
+                        <h3 style="color: var(--primary-teal); font-size: 2rem; margin-bottom: 0.5rem;">Elan Bags</h3>
+                        <p>Boutique fashion brand specializing in handcrafted, artisanal handbags</p>
+                    </div>
+                    
+                    <div class="success-content">
+                        <div class="testimonial">
+                            <p>"Before Zinara, we struggled to consistently connect with our ideal fashion-conscious customers online, and our social media lacked impact. Zinara's team brought a clear, strategic vision, revitalizing our Instagram and Facebook presence with compelling visual stories, targeted ad campaigns, and key influencer collaborations. The results were immediate and astonishing: our online sales soared by an incredible 150%, and social media engagement more than doubled. Zinara didn't just manage our social media; they truly simplified our digital growth journey."</p>
+                            <footer>— Bridget Waceke, Managing Director, Elan Bags</footer>
+                        </div>
+                        
+                        <div class="metrics">
+                            <div class="metric-card">
+                                <div class="metric-number">150%</div>
+                                <div class="metric-label">Online Sales Growth<br><small>In just three months</small></div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-number">2x</div>
+                                <div class="metric-label">Social Media Engagement<br><small>Doubled engagement rates</small></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials">
+        <!-- Who We Serve Section -->
+        <section id="clients">
             <div class="container">
-                <h2 class="section-title">Client Testimonials</h2>
-                <p class="section-subtitle">Hear from our satisfied clients</p>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <p style="font-style: italic; margin-bottom: 1rem;">"Zinara truly simplified our digital growth journey. The results were immediate and astonishing!"</p>
-                        <p><strong>Bridget Waceke</strong> - Elan Bags</p>
-                        <p style="color: var(--secondary-orange);">★★★★★</p>
+                <h2 class="section-title">Who We Serve</h2>
+                <p class="section-subtitle">We empower diverse clients from nascent ventures to established enterprises</p>
+                
+                <div class="clients-grid">
+                    <div class="client-card">
+                        <div class="client-icon">🚀</div>
+                        <h3>Startups & SMEs in Africa</h3>
+                        <p>New and growing businesses, small and medium-sized enterprises, and solopreneurs looking for growth and visibility.</p>
                     </div>
-                    <div class="card">
-                        <p style="font-style: italic; margin-bottom: 1rem;">"Their SEO strategy brought customers through our doors that we never would have reached otherwise."</p>
-                        <p><strong>James Mwangi</strong> - Nairobi Coffee House</p>
-                        <p style="color: var(--secondary-orange);">★★★★★</p>
+                    
+                    <div class="client-card">
+                        <div class="client-icon">💼</div>
+                        <h3>Professional Services</h3>
+                        <p>Coaches, freelancers, consultants, and service-based companies enhancing their digital presence.</p>
                     </div>
-                    <div class="card">
-                        <p style="font-style: italic; margin-bottom: 1rem;">"The AI solutions saved us countless hours. True partners in our growth."</p>
-                        <p><strong>Sarah Kimani</strong> - TechStart Kenya</p>
-                        <p style="color: var(--secondary-orange);">★★★★★</p>
+                    
+                    <div class="client-card">
+                        <div class="client-icon">🛍️</div>
+                        <h3>Retail & E-commerce</h3>
+                        <p>Retail businesses and e-commerce stores, including brick-and-mortar transitioning to digital.</p>
                     </div>
-                    <div class="card">
-                        <p style="font-style: italic; margin-bottom: 1rem;">"Zinara understands the African market like no other agency."</p>
-                        <p><strong>Amina Njeri</strong> - EcoCraft Kenya</p>
-                        <p style="color: var(--secondary-orange);">★★★★★</p>
+                    
+                    <div class="client-card">
+                        <div class="client-icon">🤝</div>
+                        <h3>NGOs & Community Organizations</h3>
+                        <p>Purpose-driven businesses and organizations seeking to amplify their digital impact.</p>
+                    </div>
+                    
+                    <div class="client-card">
+                        <div class="client-icon">⚡</div>
+                        <h3>Digital Transformation Seekers</h3>
+                        <p>Companies looking for scalable solutions to improve discoverability and embrace AI tools.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pricing">
+        <!-- Why Choose Us Section -->
+        <section id="why">
             <div class="container">
-                <h2 class="section-title">Our Pricing</h2>
-                <p class="section-subtitle">Flexible solutions for every budget</p>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>Starter</h3>
-                        <p style="font-size: 2rem; color: var(--primary-teal); font-weight: bold;">KES 25,000</p>
-                        <p style="margin-bottom: 1rem;">per month</p>
-                        <p>✓ Social Media (2 platforms)</p>
-                        <p>✓ 8 Posts/month</p>
-                        <p>✓ Monthly Reports</p>
-                        <button class="cta-button" style="width: 100%; margin-top: 1rem;" onclick="showSection('contact')">Get Started</button>
+                <h2 class="section-title">Why Choose Zinara?</h2>
+                <p class="section-subtitle">Excellence in every aspect of digital marketing</p>
+                
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <div class="benefit-number">1</div>
+                        <div class="benefit-content">
+                            <h3>Industry-Leading Expertise</h3>
+                            <p>Proven track record of delivering exceptional results for African businesses with deep market understanding.</p>
+                        </div>
                     </div>
-                    <div class="card" style="border: 3px solid var(--secondary-orange);">
-                        <h3>Growth (Popular)</h3>
-                        <p style="font-size: 2rem; color: var(--primary-teal); font-weight: bold;">KES 50,000</p>
-                        <p style="margin-bottom: 1rem;">per month</p>
-                        <p>✓ Social Media (4 platforms)</p>
-                        <p>✓ 16 Posts/month</p>
-                        <p>✓ SEO Optimization</p>
-                        <p>✓ Ad Campaigns</p>
-                        <button class="cta-button" style="width: 100%; margin-top: 1rem;" onclick="showSection('contact')">Get Started</button>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-number">2</div>
+                        <div class="benefit-content">
+                            <h3>Cutting-Edge Technology</h3>
+                            <p>Advanced AI-powered solutions that keep you ahead of the competition and drive measurable growth.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Enterprise</h3>
-                        <p style="font-size: 2rem; color: var(--primary-teal); font-weight: bold;">KES 100,000+</p>
-                        <p style="margin-bottom: 1rem;">per month</p>
-                        <p>✓ Full Strategy</p>
-                        <p>✓ Unlimited Posts</p>
-                        <p>✓ AI Automation</p>
-                        <p>✓ Dedicated Manager</p>
-                        <button class="cta-button" style="width: 100%; margin-top: 1rem;" onclick="showSection('contact')">Contact Us</button>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-number">3</div>
+                        <div class="benefit-content">
+                            <h3>Strategic Partnership Approach</h3>
+                            <p>We become an extension of your team, invested in your long-term success and sustainable growth.</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog">
-            <div class="container">
-                <h2 class="section-title">Latest from Our Blog</h2>
-                <p class="section-subtitle">Insights and trends</p>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>📱 Social Media Trends 2025</h3>
-                        <p>Discover the latest strategies driving engagement for African SMEs.</p>
-                        <p style="margin-top: 1rem; color: var(--secondary-orange);"><strong>Read More →</strong></p>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-number">4</div>
+                        <div class="benefit-content">
+                            <h3>Unmatched Market Intelligence</h3>
+                            <p>Deep understanding of African markets combined with global best practices for optimal results.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>🤖 AI for Small Businesses</h3>
-                        <p>How Kenyan entrepreneurs leverage AI tools on a budget.</p>
-                        <p style="margin-top: 1rem; color: var(--secondary-orange);"><strong>Read More →</strong></p>
-                    </div>
-                    <div class="card">
-                        <h3>🎯 Marketing on a Budget</h3>
-                        <p>Practical tips for startups to maximize marketing ROI.</p>
-                        <p style="margin-top: 1rem; color: var(--secondary-orange);"><strong>Read More →</strong></p>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-number">5</div>
+                        <div class="benefit-content">
+                            <h3>Premium Service Excellence</h3>
+                            <p>Exceptional service quality with personalized attention to every detail of your digital journey.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Your story deserves to be heard</p>
-                <div class="grid grid-2">
-                    <div class="card" style="background: var(--primary-teal); color: var(--white);">
-                        <h3 style="color: var(--white);">Contact Information</h3>
-                        <p>📧 zinara.int@gmail.com</p>
-                        <p>📱 +254 704 878 872</p>
-                        <p>🌐 zinara.co.ke</p>
+                <p class="section-subtitle">Your story deserves to be heard. Your growth deserves to be simple.</p>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <strong>Email</strong><br>
+                                zinara.int@gmail.com
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <div>
+                                <strong>Phone</strong><br>
+                                +254 704 878 872
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-icon">🌐</span>
+                            <div>
+                                <strong>Website</strong><br>
+                                zinara.co.ke
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Send a Message</h3>
-                        <form onsubmit="alert('Thank you! We will contact you soon.'); return false;">
-                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin-bottom: 1rem; border: 2px solid var(--primary-teal); border-radius: 5px;" required>
-                            <input type="email" placeholder="Email" style="width: 100%; padding: 10px; margin-bottom: 1rem; border: 2px solid var(--primary-teal); border-radius: 5px;" required>
-                            <textarea placeholder="Your Message" style="width: 100%; padding: 10px; margin-bottom: 1rem; border: 2px solid var(--primary-teal); border-radius: 5px; min-height: 100px;" required></textarea>
+                    
+                    <div class="contact-form">
+                        <h3 style="color: var(--primary-teal); margin-bottom: 1.5rem;">Send Us a Message</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel">
+                            </div>
+                            <div class="form-group">
+                                <label>Your Message</label>
+                                <textarea required></textarea>
+                            </div>
                             <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
                         </form>
                     </div>
@@ -485,23 +880,27 @@
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-section">
                     <h3>Zinara Digital Marketing</h3>
-                    <p>Rooted in Africa, designed for the world.</p>
+                    <p>Rooted in Africa, designed for the world. We ensure that no story goes unheard, no dream unseen, and no business left behind.</p>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <p><a href="#" onclick="showSection('about')" style="color: var(--white); text-decoration: none;">About</a></p>
+                    <p><a href="#" onclick="showSection('about')" style="color: var(--white); text-decoration: none;">About Us</a></p>
                     <p><a href="#" onclick="showSection('services')" style="color: var(--white); text-decoration: none;">Services</a></p>
                     <p><a href="#" onclick="showSection('contact')" style="color: var(--white); text-decoration: none;">Contact</a></p>
                 </div>
+                
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>zinara.int@gmail.com</p>
-                    <p>+254 704 878 872</p>
+                    <h3>Connect With Us</h3>
+                    <p>Email: zinara.int@gmail.com</p>
+                    <p>Phone: +254 704 878 872</p>
+                    <p>Website: zinara.co.ke</p>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 Zinara Digital Marketing Agency. All rights reserved.</p>
             </div>
@@ -509,19 +908,40 @@
     </footer>
 
     <script>
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
         function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
         }
 
         function closeMenu() {
-            document.getElementById('navLinks').classList.remove('active');
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
         }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
