@@ -17,134 +17,95 @@
       --color-gray-accent: #7A7A7A;
 
       --max-width: 1200px;
-      --container-padding: 24px;
+      --container-padding: 20px;
       --radius: 12px;
       --transition-fast: 180ms ease;
 
-      /* Typography */
       --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       --h1-size: clamp(28px, 4vw, 48px);
       --h2-size: clamp(20px, 2.2vw, 28px);
       --base-size: 16px;
     }
 
-    /* Reset & base */
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0;font-family:var(--font-sans);font-size:var(--base-size);color:#111;background:#fff;-webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;line-height:1.45;
-    }
-
+    body{margin:0;font-family:var(--font-sans);font-size:var(--base-size);color:#111;background:#fff;line-height:1.45}
     a{color:var(--color-sea-blue);text-decoration:none}
     img{max-width:100%;height:auto;display:block}
 
-    /* Layout container */
     .container{max-width:var(--max-width);margin:0 auto;padding:0 var(--container-padding)}
 
-    /* 12-column grid using CSS Grid */
     .grid-12{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-
-    /* Responsive stack */
     @media (max-width:900px){.grid-12{grid-template-columns:repeat(6,1fr)}}
     @media (max-width:600px){.grid-12{grid-template-columns:repeat(1,1fr);gap:16px}}
 
-    /* Header */
     header.site-header{background:var(--color-deep-teal);color:var(--color-blush);position:sticky;top:0;z-index:40}
-    .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:18px var(--container-padding)}
+    .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:12px var(--container-padding)}
     .brand{font-weight:700;letter-spacing:0.2px}
-    .nav{display:flex;gap:20px;align-items:center}
+    .nav{display:flex;gap:18px;align-items:center}
     .nav a{color:var(--color-blush);opacity:0.95}
-    .cta{background:var(--color-orange);color:#fff;padding:10px 16px;border-radius:8px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
-    .cta.secondary{background:transparent;border:2px solid rgba(255,255,255,0.06);color:var(--color-blush);padding:8px 12px}
-
+    .cta{background:var(--color-orange);color:#fff;padding:8px 14px;border-radius:8px;font-weight:600}
+    .cta.secondary{background:transparent;border:2px solid rgba(255,255,255,0.06);color:var(--color-blush);padding:6px 10px}
     @media (max-width:900px){.nav{display:none}}
 
-    /* HERO */
-    .hero{background:linear-gradient(180deg,var(--color-blush),#fff);padding:56px 0}
+    .hero{background:linear-gradient(180deg,var(--color-blush),#fff);padding:48px 0}
     .hero .left{grid-column:span 7}
     .hero .right{grid-column:span 5}
     @media (max-width:900px){.hero .left,.hero .right{grid-column:span 6}}
-    @media (max-width:600px){.hero{padding:32px 0}.hero .left,.hero .right{grid-column:span 1}}
+    @media (max-width:600px){.hero{padding:24px 0}.hero .left,.hero .right{grid-column:span 1}}
 
-    .headline{font-size:var(--h1-size);line-height:1.02;margin:0 0 16px;color:var(--color-deep-teal);font-weight:700}
-    .subhead{font-size:18px;color:rgba(0,0,0,0.76);margin-bottom:20px}
-    .hero-bullets{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-    .hero-bullets li{list-style:none;font-weight:500;color:var(--color-gray-accent)}
+    .headline{font-size:var(--h1-size);line-height:1.02;margin:0 0 12px;color:var(--color-deep-teal);font-weight:700}
+    .subhead{font-size:18px;color:rgba(0,0,0,0.76);margin-bottom:14px}
+    .hero-bullets{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;padding-left:18px}
+    .hero-bullets li{list-style:disc;color:var(--color-gray-accent)}
 
     .hero-ctas{display:flex;gap:12px;align-items:center}
-    .micro-trust{font-size:13px;color:var(--color-gray-accent);margin-top:12px}
+    .micro-trust{font-size:13px;color:var(--color-gray-accent);margin-top:10px}
 
     .hero-visual{background:#fff;border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(3,6,23,0.06)}
-    .hero-visual .visual-slot{height:320px;border-radius:8px;background:linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.02));display:flex;align-items:center;justify-content:center;color:var(--color-gray-accent)}
+    .hero-visual .visual-slot{height:300px;border-radius:8px;background:linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.02));display:flex;align-items:center;justify-content:center;color:var(--color-gray-accent);padding:12px}
 
-    /* Trust band */
     .trust-band{background:var(--color-gray-accent);padding:10px 0;color:#fff}
-    .trust-band .logos{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap}
-    .trust-band img{opacity:0.9;height:28px}
+    .trust-band .logos{display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap}
+    .trust-band img{opacity:0.9;height:30px}
 
-    /* Identity / Mission */
-    .identity{padding:48px 0}
+    .identity{padding:36px 0}
     .quote{font-style:italic;color:var(--color-gray-accent);margin-bottom:10px}
-    .mission{background:transparent}
 
-    /* How we do it */
-    .how{background:var(--color-deep-teal);color:var(--color-blush);padding:52px 0;border-radius:8px}
-    .metrics{display:flex;gap:20px;align-items:center;justify-content:flex-start}
+    .how{background:var(--color-deep-teal);color:var(--color-blush);padding:44px 0;border-radius:8px}
+    .metrics{display:flex;gap:12px;align-items:center;justify-content:flex-start}
     .metric{flex:1;text-align:left}
-    .metric .num{font-size:28px;color:var(--color-aqua);font-weight:700}
+    .metric .num{font-size:24px;color:var(--color-aqua);font-weight:700}
     .mechanism{display:flex;flex-direction:column;gap:12px}
 
-    /* Testimonials */
-    .testimonials{padding:42px 0}
-    .testimonial{background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
+    .testimonials{padding:36px 0}
+    .testimonial{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
     .stars{color:var(--color-orange);margin-bottom:8px}
 
-    /* Services grid */
-    .services{padding:48px 0}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .services{padding:36px 0}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     @media (max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:600px){.cards{grid-template-columns:1fr}}
-    .card{background:#fff;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+    .card{background:#fff;padding:16px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
     .card h3{margin:0 0 8px}
     .card p{margin:0;color:var(--color-gray-accent)}
-    .card .card-cta{display:inline-block;margin-top:12px;color:var(--color-sea-blue);font-weight:600}
+    .card .card-cta{display:inline-block;margin-top:10px;color:var(--color-sea-blue);font-weight:600}
 
-    /* Final CTA band */
-    .final-cta{background:var(--color-deep-teal);color:var(--color-blush);padding:42px 0;border-radius:8px;margin-top:20px}
-    .final-cta .form{display:flex;gap:12px;align-items:center}
-    .final-cta input{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--color-blush);min-width:0}
-    .final-cta .submit{background:var(--color-orange);color:#fff;padding:12px 16px;border-radius:8px;border:0;font-weight:700}
+    .final-cta{background:var(--color-deep-teal);color:var(--color-blush);padding:36px 0;border-radius:8px;margin-top:20px}
+    .final-cta .form{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .final-cta input{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--color-blush);min-width:0}
+    .final-cta .submit{background:var(--color-orange);color:#fff;padding:10px 14px;border-radius:8px;border:0;font-weight:700}
 
-    /* Footer */
-    footer{background:var(--color-deep-teal);color:var(--color-blush);padding:36px 0;margin-top:36px}
+    footer{background:var(--color-deep-teal);color:var(--color-blush);padding:28px 0;margin-top:28px}
     footer a{color:rgba(255,255,255,0.95)}
 
-    /* Utility */
     .muted{color:var(--color-gray-accent)}
     .small{font-size:13px}
 
-    /* Focus states */
     a:focus,button:focus,input:focus{outline:3px solid rgba(3,167,161,0.12);outline-offset:3px}
   </style>
-
-  <!-- Structured Data (Organization + Service) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Zinara Digital Marketing",
-    "url":"https://yourdomain.example",
-    "logo":"https://yourdomain.example/logo.png",
-    "sameAs":[],
-    "description":"Zinara helps businesses unleash their digital potential through integrated marketing ecosystems that drive visibility, trust, and conversions.",
-    "service":[{"@type":"Service","name":"SEO & Organic Growth"},{"@type":"Service","name":"Paid Media & Performance"},{"@type":"Service","name":"Conversion Design & Automation"}]
-  }
-  </script>
 </head>
 <body>
-
-  <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container">
       <div class="brand" aria-label="Zinara Digital">Zinara Digital</div>
@@ -158,254 +119,228 @@
       </nav>
       <div style="display:flex;gap:8px;align-items:center">
         <a href="#get-started" class="cta">Get Started</a>
-        <a href="#book-demo" class="cta secondary">Book Demo</a>
+        <button id="menu-toggle" class="cta secondary" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" aria-label="Hero" role="region">
-    <div class="container grid-12" style="align-items:center">
-
-      <!-- LEFT: copy -->
+  <main>
+    <!-- HERO -->
+    <section class="hero container grid-12" aria-label="Hero">
       <div class="left">
         <h1 class="headline">Unleash Your Digital Potential — Where Visibility Meets Conversion.</h1>
         <p class="subhead">Zinara Digital helps businesses build visibility, authority, and revenue through data-driven marketing systems designed for growth that lasts.</p>
-
-        <ul class="hero-bullets" aria-hidden="true">
+        <ul class="hero-bullets">
           <li>Attract qualified traffic with strategic SEO and high-performing ads.</li>
           <li>Convert more visitors with conversion-first web design and automation.</li>
           <li>Retain customers with nurture flows and proactive customer care.</li>
         </ul>
 
         <div class="hero-ctas">
-          <a href="#get-started" class="cta" role="button">Get Your Free Growth Audit</a>
-          <a href="#services" class="small muted" style="align-self:center">Explore Our Services</a>
+          <a href="#get-started" id="primary-cta" class="cta">Get Your Free Growth Audit</a>
+          <a href="#services" class="small muted" id="secondary-cta">Explore Our Services</a>
         </div>
-
         <div class="micro-trust">Trusted by 500+ growth teams, startups, and enterprises.</div>
       </div>
 
-      <!-- RIGHT: visual slot (A/B test variants) -->
       <aside class="right">
-        <div class="hero-visual" data-test-slot="hero-visual">
-          <div class="visual-slot" aria-hidden="true">Visual test slot — Video / Static / Micro-form</div>
+        <div class="hero-visual" id="hero-visual">
+          <div class="visual-slot" id="visual-slot">Visual slot — Video / Image / Microform (A/B test)</div>
+        </div>
+        <div style="margin-top:8px;display:flex;gap:8px">
+          <button onclick="setHeroVariant('video')">Video</button>
+          <button onclick="setHeroVariant('image')">Image</button>
+          <button onclick="setHeroVariant('microform')">Micro-form</button>
         </div>
       </aside>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- TRUST BAND -->
-  <section class="trust-band" aria-hidden="false">
-    <div class="container">
-      <div class="logos">
-        <!-- Replace src with monochrome logo assets for trust -->
-        <img src="https://via.placeholder.com/120x28?text=Logo1" alt="Client logo 1">
-        <img src="https://via.placeholder.com/120x28?text=Logo2" alt="Client logo 2">
-        <img src="https://via.placeholder.com/120x28?text=Logo3" alt="Client logo 3">
-        <img src="https://via.placeholder.com/120x28?text=Logo4" alt="Client logo 4">
-        <img src="https://via.placeholder.com/120x28?text=Logo5" alt="Client logo 5">
-      </div>
-    </div>
-  </section>
-
-  <!-- IDENTITY / MISSION -->
-  <section class="identity container" id="why">
-    <div class="grid-12" style="align-items:center">
-      <div style="grid-column:span 6">
-        <div class="quote">"For those who refuse to stay invisible."</div>
-        <h2 style="font-size:var(--h2-size);margin:6px 0 12px;color:var(--color-deep-teal)">Your Digital Growth. Simplified.</h2>
-        <p>At Zinara Digital, we engineer digital ecosystems that amplify presence, accelerate conversions, and scale retention. We combine strategy, storytelling, and automation to turn attention into revenue.</p>
-      </div>
-      <div style="grid-column:span 6">
-        <h3 style="margin-top:0">Mission</h3>
-        <p>To amplify business stories through smart digital marketing that builds trust and drives growth.</p>
-        <h3>Vision</h3>
-        <p>A future where every brand is visible, credible, and globally scalable — transforming ideas into measurable impact.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW WE DO IT / METRICS -->
-  <section class="how container" aria-labelledby="how-heading">
-    <div class="grid-12" style="align-items:center">
-      <div style="grid-column:span 8">
-        <h2 id="how-heading" style="margin-top:0">How We Drive Measurable Growth</h2>
-        <p>We blend creativity, technology, and data to build systems that turn potential into performance. We grow business revenue 2–5× within six months through strategic diagnostics, targeted execution, and continual optimization.</p>
-
-        <div class="mechanism">
-          <strong>Strategy</strong>
-          <p class="small muted">Market & funnel diagnostics, positioning, messaging.</p>
-          <strong>Execution</strong>
-          <p class="small muted">SEO, Paid Media, Content, Web Development, Automation.</p>
-          <strong>Optimization</strong>
-          <p class="small muted">CRO, analytics, A/B testing, continual improvements.</p>
+    <!-- TRUST BAND -->
+    <section class="trust-band" aria-hidden="false">
+      <div class="container">
+        <div class="logos">
+          <img src="https://via.placeholder.com/120x28?text=Logo1" alt="Partner logo 1">
+          <img src="https://via.placeholder.com/120x28?text=Logo2" alt="Partner logo 2">
+          <img src="https://via.placeholder.com/120x28?text=Logo3" alt="Partner logo 3">
+          <img src="https://via.placeholder.com/120x28?text=Logo4" alt="Partner logo 4">
+          <img src="https://via.placeholder.com/120x28?text=Logo5" alt="Partner logo 5">
         </div>
-
-        <p style="margin-top:18px"><a href="#portfolio" style="background:transparent;border:0;color:var(--color-aqua);font-weight:700">See case studies</a></p>
       </div>
+    </section>
 
-      <div style="grid-column:span 4">
-        <div class="metrics">
-          <div class="metric">
-            <div class="num">50+</div>
-            <div class="muted small">Businesses Grown</div>
+    <!-- IDENTITY -->
+    <section class="identity container" id="why">
+      <div class="grid-12">
+        <div style="grid-column:span 6">
+          <div class="quote">"For those who refuse to stay invisible."</div>
+          <h2 style="font-size:var(--h2-size);margin:6px 0 12px;color:var(--color-deep-teal)">Your Digital Growth. Simplified.</h2>
+          <p>At Zinara Digital, we engineer digital ecosystems that amplify presence, accelerate conversions, and scale retention. We combine strategy, storytelling, and automation to turn attention into revenue.</p>
+        </div>
+        <div style="grid-column:span 6">
+          <h3 style="margin-top:0">Mission</h3>
+          <p>To amplify business stories through smart digital marketing that builds trust and drives growth.</p>
+          <h3>Vision</h3>
+          <p>A future where every brand is visible, credible, and globally scalable — transforming ideas into measurable impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE DO IT -->
+    <section class="how container" aria-labelledby="how-heading">
+      <div class="grid-12">
+        <div style="grid-column:span 8">
+          <h2 id="how-heading" style="margin-top:0">How We Drive Measurable Growth</h2>
+          <p>We blend creativity, technology, and data to build systems that turn potential into performance. We grow business revenue 2–5× within six months through strategic diagnostics, targeted execution, and continual optimization.</p>
+          <div class="mechanism">
+            <strong>Strategy</strong>
+            <p class="small muted">Market & funnel diagnostics, positioning, messaging.</p>
+            <strong>Execution</strong>
+            <p class="small muted">SEO, Paid Media, Content, Web Development, Automation.</p>
+            <strong>Optimization</strong>
+            <p class="small muted">CRO, analytics, A/B testing, continual improvements.</p>
           </div>
-          <div class="metric">
-            <div class="num">250%</div>
-            <div class="muted small">Average Revenue Increase</div>
-          </div>
-          <div class="metric">
-            <div class="num">98%</div>
-            <div class="muted small">Client Retention Rate</div>
+          <p style="margin-top:12px"><a href="#portfolio" style="background:transparent;border:0;color:var(--color-aqua);font-weight:700">See case studies</a></p>
+        </div>
+        <div style="grid-column:span 4">
+          <div class="metrics">
+            <div class="metric"><div class="num" id="m1">50+</div><div class="muted small">Businesses Grown</div></div>
+            <div class="metric"><div class="num" id="m2">250%</div><div class="muted small">Average Revenue Increase</div></div>
+            <div class="metric"><div class="num" id="m3">98%</div><div class="muted small">Client Retention Rate</div></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials container" id="reviews">
-    <h2 style="margin-top:0">Real Stories. Real Growth.</h2>
-    <div class="grid-12">
-      <div style="grid-column:span 6">
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"Zinara redefined our event marketing success. Their strategic automation and targeted social media campaigns helped us sell out three major events. Workflow automation reduced admin tasks by 60%, allowing our team to focus on creativity and growth."</p>
-          <p class="small muted">— Joseph Mwangi, Founder, UrbanTribe Events</p>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials container" id="reviews">
+      <h2 style="margin-top:0">Real Stories. Real Growth.</h2>
+      <div class="grid-12">
+        <div style="grid-column:span 6">
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"Zinara redefined our event marketing success. Their strategic automation and targeted social media campaigns helped us sell out three major events. Workflow automation reduced admin tasks by 60%, allowing our team to focus on creativity and growth."</p>
+            <p class="small muted">— Joseph Mwangi, Founder, UrbanTribe Events</p>
+          </div>
+        </div>
+        <div style="grid-column:span 6">
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"Zinara revolutionized our beauty business through digital transformation. Their Instagram marketing and Google Ads strategy increased our monthly customer base by over 40%. Zinara also implemented a smart booking and inventory system that streamlined operations."</p>
+            <p class="small muted">— Azma Suleiman, Operations Manager, GlamFix Beauty Parlour</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div style="grid-column:span 6">
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"Zinara revolutionized our beauty business through digital transformation. Their Instagram marketing and Google Ads strategy increased our monthly customer base by over 40%. Zinara also implemented a smart booking and inventory system that streamlined operations."</p>
-          <p class="small muted">— Azma Suleiman, Operations Manager, GlamFix Beauty Parlour</p>
+    <!-- SERVICES -->
+    <section class="services container" id="services">
+      <h2 style="margin-top:0">Services That Power Growth</h2>
+      <p class="muted small">Select a growth pillar to explore the core solutions that drive results.</p>
+      <div class="cards">
+        <article class="card" aria-labelledby="svc-visibility"><h3 id="svc-visibility">Visibility & Authority</h3><p>Build uninterrupted reach and market credibility through search, paid media, and authority content.</p><p class="small muted">SEO Mastery · High-ROI Paid Ads · Authority Content</p><a class="card-cta" href="#">Explore Visibility Solutions</a></article>
+        <article class="card" aria-labelledby="svc-engagement"><h3 id="svc-engagement">Engagement & Conversion</h3><p>Create experiences that convert visitors into customers with conversion-first design and automation.</p><p class="small muted">Conversion Web Design · Social Funnels · Automation & CRM</p><a class="card-cta" href="#">Explore Conversion Solutions</a></article>
+        <article class="card" aria-labelledby="svc-retention"><h3 id="svc-retention">Retention & Expansion</h3><p>Increase customer lifetime value through nurture systems, support, and AI-driven insights.</p><p class="small muted">Email & Nurture · Reputation Management · AI Advisory</p><a class="card-cta" href="#">Explore Retention Solutions</a></article>
+
+        <article class="card"><h3>Website Design & Development</h3><p>Fast, mobile-first websites optimized for conversions and performance.</p><a class="card-cta" href="#">Learn more</a></article>
+        <article class="card"><h3>Content Marketing & Copywriting</h3><p>Strategic content that ranks, educates, and converts.</p><a class="card-cta" href="#">Learn more</a></article>
+        <article class="card"><h3>Analytics & CRO</h3><p>Measure performance and continuously optimize for growth.</p><a class="card-cta" href="#">Learn more</a></article>
+        <article class="card"><h3>AI-Driven Automation</h3><p>Chatbots, predictive analytics, and automation to scale operations.</p><a class="card-cta" href="#">Learn more</a></article>
+        <article class="card"><h3>Reputation & Support Systems</h3><p>Live chat, review management, and customer experience programs.</p><a class="card-cta" href="#">Learn more</a></article>
+      </div>
+      <p style="margin-top:12px"><a href="#services" class="small muted">View all services</a></p>
+    </section>
+
+    <!-- FINAL CTA BAND -->
+    <section class="final-cta container">
+      <div class="grid-12">
+        <div style="grid-column:span 7">
+          <h2 style="margin-top:0">Ready to grow? Get a free 15-minute growth audit + 3 quick wins.</h2>
+          <p class="muted small">We’ll give you immediate, actionable recommendations tailored to your business.</p>
+          <form id="audit-form" class="form" action="#" method="post" aria-label="Growth audit form">
+            <input type="text" name="name" id="name" placeholder="Full name" required aria-label="Full name">
+            <input type="email" name="email" id="email" placeholder="Business email" required aria-label="Business email">
+            <input type="text" name="website" id="website" placeholder="Website or LinkedIn (optional)" aria-label="Website or LinkedIn">
+            <button type="submit" class="submit">Get My Audit</button>
+          </form>
+          <p class="small muted" style="margin-top:10px">We respect your privacy. No spam. Unsubscribe anytime.</p>
+        </div>
+        <div style="grid-column:span 5">
+          <div style="background:rgba(255,255,255,0.03);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)">
+            <p style="margin:0 0 8px"><strong>What you get:</strong></p>
+            <ul class="small muted"><li>15-minute strategy assessment</li><li>3 quick wins you can implement this week</li><li>Estimated ROI & next-step plan</li></ul>
+            <p style="margin-top:12px" class="small muted">Trusted by growth teams worldwide.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- SERVICES -->
-  <section class="services container" id="services">
-    <h2 style="margin-top:0">Services That Power Growth</h2>
-    <p class="muted small">Select a growth pillar to explore the core solutions that drive results.</p>
-
-    <div class="cards" role="list">
-
-      <!-- Big hero card: Visibility & Authority -->
-      <article class="card" role="listitem" aria-labelledby="svc-visibility">
-        <h3 id="svc-visibility">Visibility & Authority</h3>
-        <p>Build uninterrupted reach and market credibility through search, paid media, and authority content.</p>
-        <p class="small muted">SEO Mastery · High-ROI Paid Ads · Authority Content</p>
-        <a class="card-cta" href="#">Explore Visibility Solutions</a>
-      </article>
-
-      <!-- Big hero card: Engagement & Conversion -->
-      <article class="card" role="listitem" aria-labelledby="svc-engagement">
-        <h3 id="svc-engagement">Engagement & Conversion</h3>
-        <p>Create experiences that convert visitors into customers with conversion-first design and automation.</p>
-        <p class="small muted">Conversion Web Design · Social Funnels · Automation & CRM</p>
-        <a class="card-cta" href="#">Explore Conversion Solutions</a>
-      </article>
-
-      <!-- Big hero card: Retention & Expansion -->
-      <article class="card" role="listitem" aria-labelledby="svc-retention">
-        <h3 id="svc-retention">Retention & Expansion</h3>
-        <p>Increase customer lifetime value through nurture systems, support, and AI-driven insights.</p>
-        <p class="small muted">Email & Nurture · Reputation Management · AI Advisory</p>
-        <a class="card-cta" href="#">Explore Retention Solutions</a>
-      </article>
-
-      <!-- Supporting smaller cards -->
-      <article class="card" role="listitem">
-        <h3>Website Design & Development</h3>
-        <p>Fast, mobile-first websites optimized for conversions and performance.</p>
-        <a class="card-cta" href="#">Learn more</a>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>Content Marketing & Copywriting</h3>
-        <p>Strategic content that ranks, educates, and converts.</p>
-        <a class="card-cta" href="#">Learn more</a>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>Analytics & CRO</h3>
-        <p>Measure performance and continuously optimize for growth.</p>
-        <a class="card-cta" href="#">Learn more</a>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>AI-Driven Automation</h3>
-        <p>Chatbots, predictive analytics, and automation to scale operations.</p>
-        <a class="card-cta" href="#">Learn more</a>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>Reputation & Support Systems</h3>
-        <p>Live chat, review management, and customer experience programs.</p>
-        <a class="card-cta" href="#">Learn more</a>
-      </article>
-
-    </div>
-
-    <p style="margin-top:18px"><a href="#services" class="small muted">View all services</a></p>
-  </section>
-
-  <!-- FINAL CTA BAND -->
-  <section class="final-cta container">
-    <div class="grid-12" style="align-items:center;">
-      <div style="grid-column:span 7">
-        <h2 style="margin-top:0">Ready to grow? Get a free 15-minute growth audit + 3 quick wins.</h2>
-        <p class="muted small">We’ll give you immediate, actionable recommendations tailored to your business.</p>
-
-        <form class="form" action="#" method="post" aria-label="Growth audit form">
-          <input type="text" name="name" placeholder="Full name" required aria-label="Full name">
-          <input type="email" name="email" placeholder="Business email" required aria-label="Business email">
-          <input type="text" name="website" placeholder="Website or LinkedIn (optional)" aria-label="Website or LinkedIn">
-          <button type="submit" class="submit">Get My Audit</button>
-        </form>
-
-        <p class="small muted" style="margin-top:10px">We respect your privacy. No spam. Unsubscribe anytime.</p>
-      </div>
-
-      <div style="grid-column:span 5">
-        <div style="background:rgba(255,255,255,0.03);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)">
-          <p style="margin:0 0 8px"><strong>What you get:</strong></p>
-          <ul class="small muted">
-            <li>15-minute strategy assessment</li>
-            <li>3 quick wins you can implement this week</li>
-            <li>Estimated ROI & next-step plan</li>
-          </ul>
-          <p style="margin-top:12px" class="small muted">Trusted by growth teams worldwide.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="container grid-12">
-      <div style="grid-column:span 4">
-        <strong>Zinara Digital</strong>
-        <p class="small muted">Digital Growth Simplified. We build marketing ecosystems that drive visibility, conversion, and retention.</p>
-      </div>
-      <div style="grid-column:span 4">
-        <nav aria-label="Footer navigation">
-          <a href="#services">Services</a><br>
-          <a href="#portfolio">Portfolio</a><br>
-          <a href="#blog">Blog</a>
-        </nav>
-      </div>
-      <div style="grid-column:span 4">
-        <p class="small">hello@zinaradigital.com</p>
-        <p class="small">Global clients supported</p>
-      </div>
+      <div style="grid-column:span 4"><strong>Zinara Digital</strong><p class="small muted">Digital Growth Simplified. We build marketing ecosystems that drive visibility, conversion, and retention.</p></div>
+      <div style="grid-column:span 4"><nav aria-label="Footer navigation"><a href="#services">Services</a><br><a href="#portfolio">Portfolio</a><br><a href="#blog">Blog</a></nav></div>
+      <div style="grid-column:span 4"><p class="small">hello@zinaradigital.com</p><p class="small">Global clients supported</p></div>
     </div>
-    <div style="text-align:center;margin-top:18px;color:rgba(255,255,255,0.7);font-size:13px">© 2025 Zinara Digital Marketing. All rights reserved.</div>
+    <div style="text-align:center;margin-top:14px;color:rgba(255,255,255,0.7);font-size:13px">© 2025 Zinara Digital Marketing. All rights reserved.</div>
   </footer>
 
+  <!-- Lightweight JS for interactivity and beginner-friendly integration -->
+  <script>
+    // Simple hero variant switcher (stores preference in localStorage for session persistence)
+    function setHeroVariant(type){
+      const slot = document.getElementById('visual-slot');
+      localStorage.setItem('heroVariant','' + type);
+      slot.innerHTML = '';
+      if(type === 'video'){
+        const video = document.createElement('video');
+        video.setAttribute('playsinline','true'); video.setAttribute('muted','true'); video.setAttribute('loop','true');
+        video.style.width = '100%'; video.style.height = '100%'; video.style.objectFit = 'cover';
+        // placeholder source - replace with your own hero clip
+        const src = document.createElement('source'); src.src = 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'; src.type = 'video/mp4';
+        video.appendChild(src); slot.appendChild(video); video.play().catch(()=>{});
+      } else if(type === 'image'){
+        const img = document.createElement('img'); img.alt = 'Team collaborating on digital strategy'; img.style.width='100%'; img.style.height='100%'; img.style.objectFit='cover';
+        img.src = 'https://via.placeholder.com/800x450?text=Zinara+Team'; slot.appendChild(img);
+      } else {
+        // micro-form
+        const form = document.createElement('form'); form.onsubmit = function(e){e.preventDefault(); alert('Thanks — we will email your 3 quick wins.'); return false};
+        const input = document.createElement('input'); input.type='email'; input.placeholder='Enter your email for 3 quick wins'; input.required=true; input.style.padding='10px'; input.style.width='70%'; input.style.marginRight='8px';
+        const btn = document.createElement('button'); btn.type='submit'; btn.textContent='Send'; btn.style.padding='10px'; btn.style.background='var(--color-orange)'; btn.style.color='#fff'; btn.style.border='none'; btn.style.borderRadius='8px';
+        form.appendChild(input); form.appendChild(btn); slot.appendChild(form);
+      }
+    }
+    // Initialize hero variant
+    (function(){ const v = localStorage.getItem('heroVariant') || 'video'; setHeroVariant(v); })();
+
+    // Simple form handling for audit form - beginner friendly: logs data, validates, simulates POST
+    document.getElementById('audit-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const website = document.getElementById('website').value.trim();
+      if(!email){ alert('Please enter your email'); return; }
+      // Minimal data object - in production push to CRM via fetch to your endpoint
+      const payload = {name:name,email:email,website:website,ts:new Date().toISOString()};
+      console.log('Audit request submitted',payload);
+      // simulate network request
+      const btn = document.querySelector('.submit'); btn.disabled = true; btn.textContent='Sending...';
+      setTimeout(()=>{ btn.disabled=false; btn.textContent='Get My Audit'; alert('Thanks! Your request has been received. We will email you shortly.'); document.getElementById('audit-form').reset(); },1200);
+    });
+
+    // Simple metric counter animation (beginner-friendly)
+    function animateCounter(id, start, end, duration){
+      const el = document.getElementById(id); if(!el) return; let startTime=null;
+      function step(ts){ if(!startTime) startTime=ts; const progress=Math.min((ts-startTime)/duration,1); const value=Math.floor(progress*(end-start)+start); el.textContent = value + (typeof end === 'string' ? '' : (end===250?'%':'')); if(progress<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+    // animate on load
+    window.addEventListener('load', function(){ animateCounter('m1',0,50,900); animateCounter('m2',100,250,900); animateCounter('m3',0,98,900); });
+
+    // Simple mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function(){
+      const expanded = this.getAttribute('aria-expanded') === 'true'; this.setAttribute('aria-expanded', !expanded);
+      alert('On small screens, implement a slide-out menu in production. This is a placeholder for beginners.');
+    });
+  </script>
 </body>
 </html>
