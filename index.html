@@ -1,883 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zinara Digital Marketing Agency. Digital Growth Simplified. For those who refuse to stay invisible.">
-    <title>Zinara Digital Marketing Agency</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --header-footer: #00303F;
-            --hero-bg: #EDDFE0;
-            --main-headings: #006B7D;
-            --cta-buttons: #FF6B35;
-            --body-text: #2D3142;
-            --metrics: #03A6A1;
-            --cards: #FFFFFF;
-            --light-gray: #F5F5F5;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--body-text);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: var(--header-footer);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: var(--cta-buttons);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--cta-buttons);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        main {
-            margin-top: 70px;
-        }
-
-        section {
-            display: none;
-            padding: 80px 0;
-            min-height: 100vh;
-            background: white;
-        }
-
-        section.active {
-            display: block;
-        }
-
-        .hero {
-            background: var(--hero-bg);
-            text-align: center;
-            padding: 120px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 90vh;
-        }
-
-        section:not(.hero) {
-            background: white;
-            padding-top: 100px;
-        }
-
-        section:not(.hero)::before {
-            content: '';
-            display: block;
-            height: 4px;
-            background: linear-gradient(to right, var(--main-headings), var(--cta-buttons));
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            color: var(--main-headings);
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero .tagline {
-            font-size: 1.5rem;
-            color: var(--cta-buttons);
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-button {
-            background: var(--cta-buttons);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--main-headings);
-            margin-bottom: 0.5rem;
-            animation: fadeIn 0.6s ease;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-            color: var(--body-text);
-            animation: fadeIn 0.8s ease;
-        }
-
-        .grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .card {
-            background: var(--cards);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .card h3 {
-            color: var(--main-headings);
-            margin-bottom: 1rem;
-        }
-
-        .value-card {
-            background: var(--light-gray);
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 5px solid var(--main-headings);
-        }
-
-        .value-card h3 {
-            color: var(--main-headings);
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-highlight {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--metrics);
-            margin: 1rem 0;
-        }
-
-        .testimonial-card {
-            border-left: 5px solid var(--cta-buttons);
-        }
-
-        .rating {
-            color: var(--cta-buttons);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-featured {
-            border: 3px solid var(--cta-buttons);
-            transform: scale(1.05);
-        }
-
-        .pricing-badge {
-            background: var(--cta-buttons);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        footer {
-            background: var(--header-footer);
-            color: white;
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: var(--cta-buttons);
-            margin-bottom: 1rem;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 968px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--header-footer);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2rem;
-                transition: left 0.3s;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links a {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">Zinara<span>.</span></div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#" onclick="showSection('home'); closeMenu()">Home</a></li>
-                <li><a href="#" onclick="showSection('about'); closeMenu()">About</a></li>
-                <li><a href="#" onclick="showSection('services'); closeMenu()">Services</a></li>
-                <li><a href="#" onclick="showSection('portfolio'); closeMenu()">Portfolio</a></li>
-                <li><a href="#" onclick="showSection('casestudies'); closeMenu()">Case Studies</a></li>
-                <li><a href="#" onclick="showSection('testimonials'); closeMenu()">Testimonials</a></li>
-                <li><a href="#" onclick="showSection('pricing'); closeMenu()">Pricing</a></li>
-                <li><a href="#" onclick="showSection('blog'); closeMenu()">Blog</a></li>
-                <li><a href="#" onclick="showSection('contact'); closeMenu()">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="home" class="hero active">
-            <div>
-                <h1>Zinara Digital Marketing Agency</h1>
-                <p class="tagline">Digital Growth Simplified</p>
-                <p style="font-size: 1.3rem; font-weight: bold; margin-bottom: 1.5rem;">For Those Who Refuse to Stay Invisible</p>
-                <p>You've built something real. Something that matters. In a fast changing world, it's not enough to be good you have to be seen.</p>
-                <p style="margin-bottom: 2rem;">We help Africa's entrepreneurs, creators, and small businesses grow through visibility engineered by strategy, storytelling, and digital precision.</p>
-                <button class="cta-button" onclick="showSection('contact')">Ready to Be Seen?</button>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2 class="section-title">About Zinara</h2>
-                <p class="section-subtitle">More than an agency we're your growth partner</p>
-                
-                <p style="font-size: 1.2rem; text-align: center; max-width: 900px; margin: 0 auto 3rem;">Zinara Digital Marketing Agency was born from friendship, vision, and a shared belief that every African entrepreneur deserves to be seen, heard, and celebrated. Founded by three storytellers who witnessed small businesses struggle for digital visibility, Zinara was built to be more than an agency it's a growth partner for brands ready to rise.</p>
-
-                <div class="grid grid-2" style="margin-top: 3rem;">
-                    <div class="value-card">
-                        <h3>Our Vision</h3>
-                        <p>A future where every entrepreneur's story is heard, every small business thrives with credible digital presence, and vibrant communities rise stronger together across the global digital landscape.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Our Mission</h3>
-                        <p>To amplify business stories through smart digital marketing that builds trust and drives growth.</p>
-                    </div>
-                </div>
-
-                <h3 style="text-align: center; color: var(--main-headings); font-size: 2rem; margin: 4rem 0 2rem;">Our Values</h3>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>💙 Empathy</h3>
-                        <p>We understand your journey.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🤝 Integrity</h3>
-                        <p>We build trust, not just traffic.</p>
-                    </div>
-                    <div class="card">
-                        <h3>💡 Innovation</h3>
-                        <p>We merge human creativity with AI power.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🌍 Community</h3>
-                        <p>When one business grows, the community rises.</p>
-                    </div>
-                    <div class="card">
-                        <h3>⭐ Excellence</h3>
-                        <p>Every campaign is crafted with purpose and precision.</p>
-                    </div>
-                </div>
-
-                <div style="background: var(--light-gray); padding: 3rem; border-radius: 10px; margin-top: 4rem; text-align: center;">
-                    <h3 style="color: var(--main-headings); margin-bottom: 1rem;">The Founders</h3>
-                    <p>Zinara was founded by three friends united by a vision: to level the digital playing field for African entrepreneurs. Our leadership blends expertise in digital marketing, storytelling, and strategy with lived experience of the challenges small businesses face daily.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="services">
-            <div class="container">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive digital solutions tailored for your growth</p>
-                
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>Digital Marketing Strategy Development</h3>
-                        <p>Tailored growth strategies for entrepreneurs and small businesses.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> Startups, SMEs, solopreneurs</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Social Media Management & Content Creation</h3>
-                        <p>Consistent, engaging storytelling across major platforms.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> Coaches, freelancers, lifestyle brands</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Search Engine Optimization (SEO)</h3>
-                        <p>Improving online visibility through optimized content and keywords.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> E-commerce, professional services</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Brand Storytelling & Digital Narratives</h3>
-                        <p>Crafting powerful brand stories that resonate with audiences.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> Purpose-driven businesses, NGOs</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Targeted Digital Campaigns</h3>
-                        <p>Paid campaigns designed to amplify brand voice and drive measurable engagement.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> Retail, e-commerce, service companies</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Affordable Marketing Solutions</h3>
-                        <p>Customized strategies designed for budget conscious small businesses.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> Local SMEs, family businesses</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Performance Monitoring & Optimization</h3>
-                        <p>Tracking and analyzing campaigns for consistent growth.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> Scaling SMEs, startups</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Website & Online Platform Support</h3>
-                        <p>Building credible digital presences through websites and optimized platforms.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> SMEs, personal brands, e-commerce</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>AI Driven Growth Solutions</h3>
-                        <p>WhatsApp marketing funnels, automation tools, and virtual assistants.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> Businesses seeking scalable transformation</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>AI Training & Digital Transformation</h3>
-                        <p>We don't just use AI we teach others how to use it. Empowering businesses to confidently embrace AI tools and workflows.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--main-headings);"><strong>For:</strong> Startups, corporates, NGOs, institutions</p>
-                    </div>
-                </div>
-
-                <div style="background: var(--light-gray); padding: 3rem; border-radius: 10px; margin-top: 4rem;">
-                    <h3 style="color: var(--main-headings); text-align: center; margin-bottom: 2rem;">Who We Serve</h3>
-                    <div class="grid grid-2">
-                        <div>
-                            <p>✓ Small and Medium Sized Enterprises (SMEs) in Africa</p>
-                            <p>✓ Startups and solopreneurs looking for growth</p>
-                            <p>✓ Brick and mortar businesses transitioning digital</p>
-                        </div>
-                        <div>
-                            <p>✓ Community driven businesses & NGOs</p>
-                            <p>✓ Global clients seeking Africa rooted strategies</p>
-                            <p>✓ Entrepreneurs ready to scale with purpose</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <div class="container">
-                <h2 class="section-title">Our Portfolio</h2>
-                <p class="section-subtitle">Recent projects showcasing our expertise</p>
-                
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>🏢 Sundrops Realtors</h3>
-                        <p>GIS based audience targeting and AI powered email automation for real estate lead generation.</p>
-                        <p class="metric-highlight">300%</p>
-                        <p>Lead generation increase</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>🎉 UrbanTribe Events</h3>
-                        <p>Strategic email automation and social media campaigns for event marketing success.</p>
-                        <p class="metric-highlight">60%</p>
-                        <p>Admin task reduction</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>👗 Elan Bags</h3>
-                        <p>Social media management transforming fashion brand visibility and sales.</p>
-                        <p class="metric-highlight">250%</p>
-                        <p>Online sales growth</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>⚒️ Ministry of Mining</h3>
-                        <p>Interactive dashboards and workflow systems for government reporting.</p>
-                        <p class="metric-highlight">100+</p>
-                        <p>Hours saved monthly</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>💅 GlamFix Beauty Parlour</h3>
-                        <p>Instagram marketing and smart booking system for beauty business growth.</p>
-                        <p class="metric-highlight">40%</p>
-                        <p>Monthly customer increase</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="casestudies">
-            <div class="container">
-                <h2 class="section-title">Case Studies</h2>
-                <p class="section-subtitle">Real results for real businesses</p>
-                
-                <div class="card" style="margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.8rem;">Sundrops Realtors: 300% Lead Generation Growth</h3>
-                    <p style="margin: 1rem 0;"><strong>Challenge:</strong> Needed to reach high value prospects and convert leads efficiently in competitive real estate market.</p>
-                    <p style="margin: 1rem 0;"><strong>Solution:</strong> Implemented data driven marketing strategies with GIS based audience targeting and AI powered email automation.</p>
-                    <p class="metric-highlight">300% increase in lead generation within 6 months</p>
-                    <p style="font-style: italic; margin-top: 1.5rem;">"Zinara completely transformed our digital presence. Their data driven marketing strategies increased our lead generation by 300% within six months."</p>
-                    <p style="margin-top: 0.5rem;"><strong>Francis Ndirangu, CEO, Sundrops Realtors</strong></p>
-                </div>
-
-                <div class="card" style="margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.8rem;">Elan Bags: 250% Sales Transformation</h3>
-                    <p style="margin: 1rem 0;"><strong>Challenge:</strong> Fashion brand needed to position themselves among fashion conscious women and boost online sales.</p>
-                    <p style="margin: 1rem 0;"><strong>Solution:</strong> Strategic social media management and content strategy across Instagram and Facebook.</p>
-                    <p class="metric-highlight">250% online sales growth + 2x social engagement in 3 months</p>
-                    <p style="font-style: italic; margin-top: 1.5rem;">"Zinara elevated our fashion brand visibility beyond expectations. Within three months, our online sales grew by 250%."</p>
-                    <p style="margin-top: 0.5rem;"><strong>Bridget Waceke, Managing Director, Elan Bags</strong></p>
-                </div>
-
-                <div class="card">
-                    <h3 style="font-size: 1.8rem;">UrbanTribe Events: Sold Out Success</h3>
-                    <p style="margin: 1rem 0;"><strong>Challenge:</strong> Event company needed to sell out major events and reduce administrative workload.</p>
-                    <p style="margin: 1rem 0;"><strong>Solution:</strong> Strategic email automation and targeted social media campaigns with workflow automation.</p>
-                    <p class="metric-highlight">3 major events sold out + 60% admin task reduction</p>
-                    <p style="font-style: italic; margin-top: 1.5rem;">"Zinara redefined our event marketing success. Workflow automation reduced admin tasks by 60%."</p>
-                    <p style="margin-top: 0.5rem;"><strong>Joseph Mwangi, Founder, UrbanTribe Events</strong></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials">
-            <div class="container">
-                <h2 class="section-title">Client Testimonials</h2>
-                <p class="section-subtitle">Hear from our satisfied clients</p>
-                
-                <div class="grid grid-2">
-                    <div class="card testimonial-card">
-                        <div class="rating">★★★★★</div>
-                        <p style="font-style: italic; margin-bottom: 1.5rem;">"Zinara completely transformed our digital presence. Their data driven marketing strategies increased our lead generation by 300% within six months. The team's GIS based audience targeting helped us reach high value neighborhoods with precision, while their AI powered email automation converted prospects into loyal clients."</p>
-                        <p><strong>Francis Ndirangu</strong><br>CEO, Sundrops Realtors</p>
-                    </div>
-
-                    <div class="card testimonial-card">
-                        <div class="rating">★★★★★</div>
-                        <p style="font-style: italic; margin-bottom: 1.5rem;">"Zinara redefined our event marketing success. Their strategic email automation and targeted social media campaigns helped us sell out three major events in Nairobi. Workflow automation reduced admin tasks by 60%, allowing our team to focus on creativity and growth."</p>
-                        <p><strong>Joseph Mwangi</strong><br>Founder, UrbanTribe Events</p>
-                    </div>
-
-                    <div class="card testimonial-card">
-                        <div class="rating">★★★★★</div>
-                        <p style="font-style: italic; margin-bottom: 1.5rem;">"Zinara elevated our fashion brand visibility beyond expectations. Their social media management and content strategy positioned our brand perfectly. Within three months, our online sales grew by 250% and social engagement doubled across Instagram and Facebook."</p>
-                        <p><strong>Bridget Waceke</strong><br>Managing Director, Elan Bags</p>
-                    </div>
-
-                    <div class="card testimonial-card">
-                        <div class="rating">★★★★★</div>
-                        <p style="font-style: italic; margin-bottom: 1.5rem;">"Zinara helped us modernize complex government reporting through digital innovation. Their team developed interactive dashboards and workflow systems that transformed how we present mining research data to stakeholders and government bodies."</p>
-                        <p><strong>Elly Jumba</strong><br>GIS Specialist, Ministry of Mining</p>
-                    </div>
-
-                    <div class="card testimonial-card">
-                        <div class="rating">★★★★★</div>
-                        <p style="font-style: italic; margin-bottom: 1.5rem;">"Zinara revolutionized our beauty business through digital transformation. Their Instagram marketing and Google Ads strategy increased our monthly customer base by over 40%. They also implemented a smart booking and inventory system that streamlined operations."</p>
-                        <p><strong>Azma Suleiman</strong><br>Operations Manager, GlamFix Beauty Parlour</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing">
-            <div class="container">
-                <h2 class="section-title">Our Pricing</h2>
-                <p class="section-subtitle">Flexible solutions designed for every budget</p>
-                
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>Starter</h3>
-                        <p style="font-size: 2rem; color: var(--main-headings); font-weight: bold; text-align: center;">KES 25,000</p>
-                        <p style="text-align: center; margin-bottom: 1.5rem;">per month</p>
-                        <p>✓ Social Media Management (2 platforms)</p>
-                        <p>✓ 8 Posts per month</p>
-                        <p>✓ Basic Content Creation</p>
-                        <p>✓ Monthly Performance Report</p>
-                        <p>✓ Email Support</p>
-                        <button class="cta-button" style="width: 100%; margin-top: 1.5rem;" onclick="showSection('contact')">Get Started</button>
-                    </div>
-
-                    <div class="card pricing-featured">
-                        <span class="pricing-badge">MOST POPULAR</span>
-                        <h3>Growth</h3>
-                        <p style="font-size: 2rem; color: var(--main-headings); font-weight: bold; text-align: center;">KES 50,000</p>
-                        <p style="text-align: center; margin-bottom: 1.5rem;">per month</p>
-                        <p>✓ Social Media Management (4 platforms)</p>
-                        <p>✓ 16 Posts per month</p>
-                        <p>✓ Advanced Content Creation</p>
-                        <p>✓ Basic SEO Optimization</p>
-                        <p>✓ Targeted Ad Campaigns</p>
-                        <p>✓ Bi weekly Reports</p>
-                        <p>✓ Priority Support</p>
-                        <button class="cta-button" style="width: 100%; margin-top: 1.5rem;" onclick="showSection('contact')">Get Started</button>
-                    </div>
-
-                    <div class="card">
-                        <h3>Enterprise</h3>
-                        <p style="font-size: 2rem; color: var(--main-headings); font-weight: bold; text-align: center;">KES 100,000+</p>
-                        <p style="text-align: center; margin-bottom: 1.5rem;">per month</p>
-                        <p>✓ Full Digital Marketing Strategy</p>
-                        <p>✓ Unlimited Social Media Management</p>
-                        <p>✓ Premium Content Creation</p>
-                        <p>✓ Advanced SEO & Website Support</p>
-                        <p>✓ Large Scale Ad Campaigns</p>
-                        <p>✓ AI Driven Automation Tools</p>
-                        <p>✓ Weekly Performance Reports</p>
-                        <p>✓ Dedicated Account Manager</p>
-                        <p>✓ 24/7 Priority Support</p>
-                        <button class="cta-button" style="width: 100%; margin-top: 1.5rem;" onclick="showSection('contact')">Contact Us</button>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--light-gray); border-radius: 10px;">
-                    <h3 style="color: var(--main-headings); margin-bottom: 1rem;">Need a Custom Package?</h3>
-                    <p style="margin-bottom: 1.5rem;">We understand every business is unique. Let's create a tailored solution that fits your specific needs and budget.</p>
-                    <button class="cta-button" onclick="showSection('contact')">Request Custom Quote</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog">
-            <div class="container">
-                <h2 class="section-title">Latest from Our Blog</h2>
-                <p class="section-subtitle">Insights, tips, and trends in digital marketing</p>
-                
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>📱 Social Media Trends 2025</h3>
-                        <p>Discover the latest social media strategies that are driving engagement and sales for African SMEs this year.</p>
-                        <p style="margin-top: 1rem; color: var(--cta-buttons); font-weight: bold; cursor: pointer;">Read More →</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>🤖 AI Transforming Small Business Marketing</h3>
-                        <p>Learn how Kenyan entrepreneurs are leveraging AI tools to compete with larger brands on a fraction of the budget.</p>
-                        <p style="margin-top: 1rem; color: var(--cta-buttons); font-weight: bold; cursor: pointer;">Read More →</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>🎯 Digital Marketing on a Tight Budget</h3>
-                        <p>Practical tips and proven tactics for startups and small businesses looking to maximize their marketing ROI.</p>
-                        <p style="margin-top: 1rem; color: var(--cta-buttons); font-weight: bold; cursor: pointer;">Read More →</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>🔍 Local SEO Guide</h3>
-                        <p>Master local search optimization to drive foot traffic and online orders from customers near you.</p>
-                        <p style="margin-top: 1rem; color: var(--cta-buttons); font-weight: bold; cursor: pointer;">Read More →</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>💡 Telling Your Brand Story</h3>
-                        <p>How African entrepreneurs can use authentic storytelling to build trust and connect with their audience.</p>
-                        <p style="margin-top: 1rem; color: var(--cta-buttons); font-weight: bold; cursor: pointer;">Read More →</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>📊 Understanding Marketing Metrics</h3>
-                        <p>Learn which metrics matter most and how to use data to improve your marketing campaigns.</p>
-                        <p style="margin-top: 1rem; color: var(--cta-buttons); font-weight: bold; cursor: pointer;">Read More →</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to Be Seen, Heard, and Celebrated?</p>
-                
-                <div class="grid grid-2">
-                    <div class="card" style="background: var(--main-headings); color: white;">
-                        <h3 style="color: white; margin-bottom: 2rem;">Contact Information</h3>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <p style="font-size: 1.5rem; margin-bottom: 0.5rem;">📧</p>
-                            <p><strong>Email</strong></p>
-                            <p>zinara.int@gmail.com</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <p style="font-size: 1.5rem; margin-bottom: 0.5rem;">📱</p>
-                            <p><strong>Phone</strong></p>
-                            <p>+254 704 878 872</p>
-                        </div>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <p style="font-size: 1.5rem; margin-bottom: 0.5rem;">🌐</p>
-                            <p><strong>Website</strong></p>
-                            <p>zinara.co.ke</p>
-                        </div>
-
-                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                            <h4 style="margin-bottom: 1rem;">Office Hours</h4>
-                            <p>Monday to Friday: 9:00 AM to 6:00 PM EAT</p>
-                            <p>Saturday: 10:00 AM to 2:00 PM EAT</p>
-                            <p>Sunday: Closed</p>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h3 style="color: var(--main-headings); margin-bottom: 1.5rem;">Send Us a Message</h3>
-                        <form onsubmit="handleSubmit(event)">
-                            <div style="margin-bottom: 1.5rem;">
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--main-headings);">Your Name</label>
-                                <input type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--main-headings); border-radius: 5px; font-size: 1rem;">
-                            </div>
-                            <div style="margin-bottom: 1.5rem;">
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--main-headings);">Email Address</label>
-                                <input type="email" required style="width: 100%; padding: 12px; border: 2px solid var(--main-headings); border-radius: 5px; font-size: 1rem;">
-                            </div>
-                            <div style="margin-bottom: 1.5rem;">
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--main-headings);">Phone Number</label>
-                                <input type="tel" style="width: 100%; padding: 12px; border: 2px solid var(--main-headings); border-radius: 5px; font-size: 1rem;">
-                            </div>
-                            <div style="margin-bottom: 1.5rem;">
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--main-headings);">Service Interest</label>
-                                <input type="text" placeholder="e.g., Social Media Management, SEO" style="width: 100%; padding: 12px; border: 2px solid var(--main-headings); border-radius: 5px; font-size: 1rem;">
-                            </div>
-                            <div style="margin-bottom: 1.5rem;">
-                                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--main-headings);">Your Message</label>
-                                <textarea required placeholder="Tell us about your business and how we can help..." style="width: 100%; padding: 12px; border: 2px solid var(--main-headings); border-radius: 5px; font-size: 1rem; min-height: 150px; resize: vertical; font-family: inherit;"></textarea>
-                            </div>
-                            <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: var(--light-gray); border-radius: 10px;">
-                    <h3 style="color: var(--main-headings); margin-bottom: 1rem; font-size: 2rem;">Your Digital Growth, Simplified.</h3>
-                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Join hundreds of African brands redefining digital success with Zinara Digital.</p>
-                    <p style="font-size: 1.1rem;">Let's turn your visibility into influence and your ideas into measurable growth.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>Zinara Digital Marketing</h3>
-                    <p>Rooted in Africa, designed for the world. We ensure that no story goes unheard, no dream unseen, and no business left behind.</p>
-                    <p style="margin-top: 1rem; font-style: italic;">Digital Growth Simplified.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <p><a href="#" onclick="showSection('about')" style="color: white; text-decoration: none;">About Us</a></p>
-                    <p><a href="#" onclick="showSection('services')" style="color: white; text-decoration: none;">Services</a></p>
-                    <p><a href="#" onclick="showSection('portfolio')" style="color: white; text-decoration: none;">Portfolio</a></p>
-                    <p><a href="#" onclick="showSection('testimonials')" style="color: white; text-decoration: none;">Testimonials</a></p>
-                    <p><a href="#" onclick="showSection('pricing')" style="color: white; text-decoration: none;">Pricing</a></p>
-                    <p><a href="#" onclick="showSection('blog')" style="color: white; text-decoration: none;">Blog</a></p>
-                    <p><a href="#" onclick="showSection('contact')" style="color: white; text-decoration: none;">Contact</a></p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Our Services</h3>
-                    <p>Digital Marketing Strategy</p>
-                    <p>Social Media Management</p>
-                    <p>SEO Optimization</p>
-                    <p>Brand Storytelling</p>
-                    <p>AI Driven Solutions</p>
-                    <p>Digital Transformation</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Connect With Us</h3>
-                    <p>📧 zinara.int@gmail.com</p>
-                    <p>📱 +254 704 878 872</p>
-                    <p>🌐 zinara.co.ke</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Zinara Digital Marketing Agency. All rights reserved.</p>
-                <p style="margin-top: 0.5rem;">For Those Who Refuse to Stay Invisible</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-
-        function closeMenu() {
-            document.getElementById('navLinks').classList.remove('active');
-        }
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your message! We will get back to you within 24 hours.');
-            event.target.reset();
-        }
-
-        document.addEventListener('click', function(event) {
-            const nav = document.querySelector('nav');
-            const navLinks = document.getElementById('navLinks');
-            
-            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
-    </script>
-</body>
-</html>
+Excellent. Below is the **fully structured, conversion-optimized landing page** for **Zinara Digital** — written under the 30-year CRO architecture you described.
+
+This is not just text — it’s **a wireframed, performance-engineered content blueprint** ready for your designer and developer to build on your 12-column responsive grid.
+It incorporates your **brand palette**, **SEO + AI keyword optimization**, and **conversion psychology**.
+
+---
+
+# **ZINARA DIGITAL – LANDING PAGE STRUCTURE**
+
+**CRO Architecture: Dynamic Modular Framework | Asymmetrical Split-Screen System | 12-Column Grid**
+
+---
+
+## **1. HEADER (Fixed Top Navigation)**
+
+**Color:** Deep Teal (#00303F)
+**Elements:**
+
+* Logo (Left)
+* Navigation: Home | About | Services | Portfolio | Reviews | Blog | Contact
+* CTA (Right): “Get Started” — Button in Vibrant Orange (#FF6B35)
+
+**CRO Principle:** Persistent access to CTA reinforces action readiness.
+
+---
+
+## **2. HERO SECTION (Above the Fold)**
+
+**Background:** Soft Blush (#EDDFE0)
+**Layout:** Asymmetrical 60/40 Split
+
+**Left Side:**
+**H1:** *Unleash Your Digital Potential — Where Visibility Meets Conversion.*
+**Subtext:** Zinara Digital helps businesses build visibility, authority, and revenue through data-driven marketing systems designed for growth that lasts.
+**Primary CTA:** [Get Your Free Growth Audit] (Button – Orange #FF6B35)
+**Secondary CTA:** [Explore Our Services] (Text Link – Sea Blue #006B7D)
+**Trust Line:** Trusted by 500+ global brands, startups, and creators.
+
+**Right Side:**
+Video loop / rotating visual module showing growth charts, global connections, and creative teams.
+**A/B Testing Variants:**
+
+* Video Loop
+* Static Image (Digital Team)
+* Mini Form (Email Capture)
+
+---
+
+## **3. IMMEDIATE TRUST BAND**
+
+**Color:** Gray Accent (#7A7A7A), full-width strip.
+**Elements:** Partner/Client Logos: Google Partner, Meta, HubSpot, Shopify, Semrush, Canva.
+**Tagline:** “Powering growth with world-class digital technology and strategy.”
+
+**CRO Principle:** Builds **instant social proof** before scroll.
+
+---
+
+## **4. CORE IDENTITY & VALUE SECTION**
+
+**Layout:** 50/50 Split | Background Alternating Blush + Gray Accent
+
+**Left Side (Identity Quote):**
+**Quote:** *“For those who refuse to stay invisible.”*
+**Body Copy:**
+At Zinara Digital, we help entrepreneurs, creators, and businesses turn visibility into growth. Because in a world where being good isn’t enough — you have to be seen.
+We don’t just build presence; we engineer ecosystems powered by strategy, storytelling, and precision.
+
+**Right Side (Mission & Vision):**
+**Mission:** To amplify business stories through smart digital marketing that builds trust and drives growth.
+**Vision:** A future where every brand is visible, credible, and globally scalable — transforming ideas into measurable impact.
+
+---
+
+## **5. RESULTS & MECHANISM SECTION (“HOW WE DO IT”)**
+
+**Background:** Deep Teal (#00303F)
+**Text Color:** White (#FFFFFF)
+**Layout:** Asymmetrical (65/35 Split)
+
+**Left Side (Narrative):**
+**H2:** How We Drive Measurable Growth
+We’re not just another agency — we’re your growth ally.
+Our team blends creativity, technology, and data to build systems that turn potential into performance.
+We grow business revenue **2–5× within 6 months**, transforming ideas into strategy, visibility into influence, and ambition into sustainable growth.
+
+**Right Side (Metrics Grid):**
+
+* **50+** Businesses Grown
+* **250%** Average Revenue Increase
+* **98%** Client Retention Rate
+
+**CTA:** [See Our Results] (Button – Aqua #03A6A1)
+
+**CRO Principle:** Establishes **believability** and **specific performance proof** to justify premium positioning.
+
+---
+
+## **6. SOCIAL PROOF SECTION (TESTIMONIALS)**
+
+**Layout:** Split-Screen Carousel
+**Background:** White (#FFFFFF)
+
+**Testimonial 1:**
+★★★★★
+*"Zinara redefined our event marketing success. Their strategic automation and social media campaigns sold out three major events and reduced admin tasks by 60%."*
+**Client:** Joseph Mwangi, Founder – UrbanTribe Events
+
+**Testimonial 2:**
+★★★★★
+*"Zinara revolutionized our beauty business through digital transformation. Our monthly customer base grew by 40%, and operations became seamless with their automation systems."*
+**Client:** Azma Suleiman, Operations Manager – GlamFix Beauty Parlour
+
+**CRO Principle:** Humanizes performance claims and builds trust momentum before service pitch.
+
+---
+
+## **7. SERVICE HIGHLIGHTS (Dynamic Modular Grid)**
+
+**Background:** Blush (#EDDFE0)
+**Layout:** 4-Column Modular Grid (Responsive to 1-column mobile)
+**Structure:**
+Each service is a clickable card with micro-description and CTA: [Learn More]
+
+---
+
+### **CATEGORY 1: Visibility & Authority**
+
+**Focus:** Uninterrupted Traffic & Credibility
+
+1. **SEO Mastery** – Technical, On-page, and Link Building for lasting ranking power.
+2. **High-ROI Paid Ads** – Precision-targeted Google and Meta campaigns.
+3. **Authority Content** – Strategic blogging, copywriting, and brand storytelling.
+
+---
+
+### **CATEGORY 2: Engagement & Conversion**
+
+**Focus:** Turning Traffic into Revenue
+4. **Conversion Web Design** – UX/UI optimized, mobile-first, and conversion-driven.
+5. **Automation Integration** – CRM, booking, M-PESA/Pesapal, and email automation.
+6. **Social Funnels** – Paid and organic strategies to convert followers into leads.
+
+---
+
+### **CATEGORY 3: Retention & Expansion**
+
+**Focus:** Maximizing Lifetime Value
+7. **Email & Nurture Flows** – Automated, personalized retention systems.
+8. **Reputation Management & Customer Care** – Reviews, live chat, and brand sentiment tracking.
+9. **AI Advisory & Digital Transformation** – Integrating AI tools for scalability and productivity.
+
+---
+
+**CTA:** [View All Services] (Button – Sea Blue #006B7D)
+
+**CRO Principle:** Converts curiosity into exploration while maintaining visual rhythm.
+
+---
+
+## **8. SUCCESS METRICS & CTA BAND**
+
+**Background:** Deep Teal (#00303F)
+**Text Color:** White
+**Layout:** Centered, full-width
+
+**Headline:** Real Numbers. Real Growth.
+**Stats:**
+
+* **300%** Average Revenue Growth in 6 Months
+* **98%** Client Retention Rate
+* **50+** SMBs and Enterprises Scaled Globally
+* **40%** Average Cost-per-Lead Reduction
+
+**CTA Section:**
+**Headline:** Ready to grow your business?
+**Subtext:** Get a free 15-minute growth audit and 3 actionable quick wins tailored to your goals.
+
+**Form (Simple High-Conversion Layout):**
+
+* Name
+* Business Email
+* Website/Brand Name
+  **Submit Button:** [Get My Audit] – Orange (#FF6B35)
+
+**Microcopy:** *Our Track Record Speaks — No spam. Just real insights.*
+
+---
+
+## **9. FOOTER**
+
+**Background:** Deep Teal (#00303F)
+**Text Color:** White (#FFFFFF)
+
+**Footer Navigation:**
+About Us | Services | Case Studies | Blog | Contact | Privacy Policy
+
+**Contact Details:**
+[hello@zinaradigital.com](mailto:hello@zinaradigital.com) | +254 700 000 000 | Global Clients Supported
+
+**Copyright:**
+© 2025 Zinara Digital Marketing. All Rights Reserved.
+
+---
+
+### **SEO & AI OPTIMIZATION SUMMARY**
+
+**Primary Keywords:** digital marketing agency, SEO optimization, digital visibility, business growth, conversion systems, performance marketing
+**Secondary Keywords:** content strategy, marketing automation, website design, customer retention, AI transformation
+**AI Prompt Optimization Phrase:** “Zinara Digital helps global businesses unleash their digital potential through integrated marketing ecosystems that drive visibility, trust, and conversions.”
+
+---
+
+Would you like me to now translate this into a **coded version (HTML + CSS structure)** for your developer — already color-coded and SEO-optimized for deployment and A/B testing?
