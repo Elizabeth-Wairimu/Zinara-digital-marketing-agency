@@ -1,460 +1,1425 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zinara Digital – Unleash Your Digital Potential: Where Visibility Meets Conversion</title>
-    <!-- Load Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Use Inter font and configure custom Zinara colors -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden; /* Prevents horizontal scroll from grid layout on small screens */
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'zinara-deep-teal': '#00303F',
-                        'zinara-orange': '#FF6B35',
-                        'zinara-blush': '#EDDFE0',
-                        'zinara-sea-blue': '#006B7D',
-                        'zinara-aqua': '#03A6A1',
-                        'zinara-gray': '#7A7A7A',
-                    },
-                    boxShadow: {
-                        'conversion': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                    }
-                },
-            }
-        }
-    </script>
-    <!-- SEO Optimization -->
-    <meta name="description" content="Zinara Digital helps global businesses unleash their digital potential through integrated marketing ecosystems that drive visibility, trust, and conversions.">
-</head>
-<body class="text-zinara-deep-teal">
-
-    <!-- 1. HEADER (Fixed Top Navigation) -->
-    <header id="home" class="fixed top-0 left-0 right-0 z-50 bg-zinara-deep-teal shadow-lg">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
-            <!-- Logo (Left) -->
-            <a href="#home" class="text-xl font-extrabold text-white tracking-widest">ZINARA DIGITAL</a>
-            
-            <!-- Navigation (Hidden on Mobile, Visible on Large) -->
-            <nav class="hidden lg:flex space-x-6 text-white text-sm font-medium">
-                <a href="#home" class="hover:text-zinara-aqua transition duration-200">Home</a>
-                <a href="#about" class="hover:text-zinara-aqua transition duration-200">About</a>
-                <a href="#services-grid" class="hover:text-zinara-aqua transition duration-200">Services</a>
-                <a href="#portfolio" class="hover:text-zinara-aqua transition duration-200">Portfolio</a>
-                <a href="#reviews" class="hover:text-zinara-aqua transition duration-200">Reviews</a>
-                <a href="#blog" class="hover:text-zinara-aqua transition duration-200">Blog</a>
-                <a href="#contact-footer" class="hover:text-zinara-aqua transition duration-200">Contact</a>
-            </nav>
-
-            <!-- CTA (Right) -->
-            <a href="#audit-form" class="cta-button bg-zinara-orange text-white px-5 py-2 rounded-full font-bold shadow-conversion hover:bg-orange-600 transition duration-300">
-                Get Started
-            </a>
-        </div>
-    </header>
-
-    <main class="pt-[70px]">
-
-        <!-- 2. HERO SECTION (Above the Fold) -->
-        <section class="bg-zinara-blush py-16 lg:py-24" id="hero-section">
-            <div class="container mx-auto px-4 max-w-7xl">
-                <!-- Asymmetrical Split-Screen System (12-column grid) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                    
-                    <!-- Left Side: Content (60%) -->
-                    <div class="lg:col-span-7 space-y-6">
-                        <!-- H1: Unleash Your Digital Potential — Where Visibility Meets Conversion. -->
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-                            Unleash Your Digital Potential — <span class="text-zinara-orange">Where Visibility Meets Conversion.</span>
-                        </h1>
-                        <!-- Subtext -->
-                        <p class="text-lg lg:text-xl text-gray-700">
-                            Zinara Digital helps businesses build visibility, authority, and revenue through data-driven marketing systems designed for growth that lasts.
-                        </p>
-                        
-                        <!-- Primary CTA (Orange) -->
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
-                            <a href="#audit-form" class="cta-button bg-zinara-orange text-white px-8 py-3 rounded-xl font-bold text-lg shadow-2xl hover:bg-orange-600 transition duration-300 transform hover:scale-[1.02]">
-                                Get Your Free Growth Audit
-                            </a>
-                            <!-- Secondary CTA (Sea Blue Text Link) -->
-                            <a href="#services-grid" class="text-zinara-sea-blue font-semibold text-lg hover:underline transition duration-200">
-                                Explore Our Services →
-                            </a>
-                        </div>
-
-                        <!-- Trust Line -->
-                        <p class="text-sm pt-4 text-zinara-gray italic">
-                            Trusted by 500+ global brands, startups, and creators.
-                        </p>
-                    </div>
-
-                    <!-- Right Side: Visual (40%) -->
-                    <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                        <div class="w-full max-w-sm lg:max-w-none aspect-video bg-zinara-deep-teal rounded-3xl shadow-2xl flex items-center justify-center p-6">
-                            <span class="text-white text-center text-xl font-semibold">Video Loop / Visual Module Placeholder</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. IMMEDIATE TRUST BAND -->
-        <section class="bg-zinc-100 py-6 border-y border-zinara-gray/20" id="trust-band">
-            <div class="container mx-auto px-4 max-w-7xl">
-                <p class="text-center text-sm font-medium text-zinara-gray uppercase mb-4 tracking-wider">
-                    “Powering growth with world-class digital technology and strategy.”
-                </p>
-                <!-- Partner/Client Logos: Placeholder for real logos -->
-                <div class="flex justify-around items-center flex-wrap gap-6 opacity-70">
-                    <div class="h-6 w-auto text-zinara-gray font-bold">Google Partner</div>
-                    <div class="h-6 w-auto text-zinara-gray font-bold">Meta</div>
-                    <div class="h-6 w-auto text-zinara-gray font-bold">HubSpot</div>
-                    <div class="h-6 w-auto text-zinara-gray font-bold">Shopify</div>
-                    <div class="h-6 w-auto text-zinara-gray font-bold">Semrush</div>
-                    <div class="h-6 w-auto text-zinara-gray font-bold">Canva</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. CORE IDENTITY & VALUE SECTION -->
-        <section class="py-16 lg:py-24 bg-zinara-blush/50" id="about">
-            <div class="container mx-auto px-4 max-w-7xl">
-                <!-- 50/50 Split -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
-                    <!-- Left Side (Identity Quote) -->
-                    <div class="space-y-6">
-                        <h2 class="text-3xl lg:text-4xl font-extrabold text-zinara-sea-blue">
-                            “For those who refuse to stay invisible.”
-                        </h2>
-                        <p class="text-gray-700 text-lg">
-                            At Zinara Digital, we help entrepreneurs, creators, and businesses turn visibility into growth. Because in a world where being good isn’t enough — you have to be seen.
-                        </p>
-                        <p class="text-gray-700 text-lg">
-                            We don’t just build presence; we engineer ecosystems powered by strategy, storytelling, and precision.
-                        </p>
-                    </div>
-
-                    <!-- Right Side (Mission & Vision) -->
-                    <div class="space-y-10 p-6 bg-white rounded-2xl shadow-lg border border-zinara-sea-blue/10">
-                        <div class="identity__mission">
-                            <h3 class="text-2xl font-bold mb-2 flex items-center gap-3 text-zinara-deep-teal">
-                                Mission
-                            </h3>
-                            <p class="text-gray-600">To amplify business stories through smart digital marketing that builds trust and drives measurable growth.</p>
-                        </div>
-                        <div class="identity__vision">
-                            <h3 class="text-2xl font-bold mb-2 flex items-center gap-3 text-zinara-deep-teal">
-                                Vision
-                            </h3>
-                            <p class="text-gray-600">A future where every brand is visible, credible, and globally scalable — transforming ideas into measurable impact.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. RESULTS & MECHANISM SECTION (“HOW WE DO IT”) -->
-        <section class="py-16 lg:py-24 bg-zinara-deep-teal text-white" id="portfolio">
-            <div class="container mx-auto px-4 max-w-7xl">
-                <!-- Asymmetrical Split (65/35) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                    
-                    <!-- Left Side: Narrative (65%) -->
-                    <div class="lg:col-span-8 space-y-6">
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-zinara-aqua">How We Drive Measurable Growth</h2>
-                        <p class="text-xl font-medium">We’re not just another agency — we’re your growth ally.</p>
-                        <p class="text-gray-200 text-lg">
-                            Our team blends creativity, technology, and data to build systems that turn potential into performance.
-                        </p>
-                        <p class="text-gray-200 text-lg">
-                            We grow business revenue <strong class="text-zinara-orange">2–5× within 6 months</strong>, transforming ideas into strategy, visibility into influence, and ambition into sustainable growth.
-                        </p>
-                    </div>
-
-                    <!-- Right Side: Metrics Grid (35%) -->
-                    <div class="lg:col-span-4 space-y-6">
-                        <div class="grid grid-cols-3 gap-4 lg:grid-cols-1 lg:gap-6">
-                            <div class="p-4 bg-white/10 rounded-xl text-center">
-                                <span class="block text-3xl lg:text-4xl font-extrabold text-zinara-orange">50+</span>
-                                <span class="block text-sm text-gray-300">Businesses Grown</span>
-                            </div>
-                            <div class="p-4 bg-white/10 rounded-xl text-center">
-                                <span class="block text-3xl lg:text-4xl font-extrabold text-zinara-orange">250%</span>
-                                <span class="block text-sm text-gray-300">Avg Revenue Increase</span>
-                            </div>
-                            <div class="p-4 bg-white/10 rounded-xl text-center">
-                                <span class="block text-3xl lg:text-4xl font-extrabold text-zinara-orange">98%</span>
-                                <span class="block text-sm text-gray-300">Client Retention Rate</span>
-                            </div>
-                        </div>
-
-                        <!-- CTA (Aqua) -->
-                        <a href="#portfolio" class="w-full block text-center cta-button bg-zinara-aqua text-zinara-deep-teal px-8 py-3 rounded-xl font-bold text-lg shadow-conversion hover:bg-teal-500 transition duration-300">
-                            See Our Results
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. SOCIAL PROOF SECTION (TESTIMONIALS) -->
-        <section class="py-16 lg:py-24 bg-white" id="reviews">
-            <div class="container mx-auto px-4 max-w-7xl">
-                <h2 class="text-3xl font-extrabold text-center mb-12 text-zinara-deep-teal">What Our Clients Say</h2>
-                
-                <!-- Testimonial Carousel (Static 2-column view for simplicity) -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    
-                    <!-- Testimonial 1 -->
-                    <div class="p-8 bg-zinara-blush/40 rounded-3xl shadow-lg border-t-4 border-zinara-orange space-y-4">
-                        <div class="flex text-yellow-500">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                        </div>
-                        <p class="text-xl italic text-gray-800">
-                            "Zinara redefined our event marketing success. Their strategic automation and social media campaigns sold out three major events and reduced admin tasks by 60%."
-                        </p>
-                        <p class="font-semibold text-zinara-deep-teal">- Joseph Mwangi, Founder – UrbanTribe Events</p>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="p-8 bg-zinara-blush/40 rounded-3xl shadow-lg border-t-4 border-zinara-sea-blue space-y-4">
-                        <div class="flex text-yellow-500">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.2 3.3 1.4-6.2L1 7l6.5-.5L10 1l2.5 5.5 6.5.5-5.2 3.1 1.4 6.2z"/></svg>
-                        </div>
-                        <p class="text-xl italic text-gray-800">
-                            "Zinara revolutionized our beauty business through digital transformation. Our monthly customer base grew by 40%, and operations became seamless with their automation systems."
-                        </p>
-                        <p class="font-semibold text-zinara-deep-teal">- Azma Suleiman, Operations Manager – GlamFix Beauty Parlour</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. SERVICE HIGHLIGHTS (Dynamic Modular Grid) -->
-        <section class="py-16 lg:py-24 bg-zinara-blush" id="services-grid">
-            <div class="container mx-auto px-4 max-w-7xl">
-                <h2 class="text-3xl font-extrabold text-center mb-16 text-zinara-deep-teal">Our Integrated Growth Services</h2>
-                
-                <div class="space-y-12">
-                    
-                    <!-- CATEGORY 1: Visibility & Authority -->
-                    <div class="space-y-6">
-                        <h3 class="text-xl font-bold uppercase tracking-wider text-zinara-sea-blue mb-4">CATEGORY 1: Visibility & Authority <span class="text-sm font-normal text-zinara-deep-teal block">(Uninterrupted Traffic & Credibility)</span></h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            
-                            <!-- Card 1 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">SEO Mastery</span>
-                                <p class="text-gray-600">Technical, On-page, and Link Building for lasting ranking power.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-                            
-                            <!-- Card 2 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">High-ROI Paid Ads</span>
-                                <p class="text-gray-600">Precision-targeted Google and Meta campaigns.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">Authority Content</span>
-                                <p class="text-gray-600">Strategic blogging, copywriting, and brand storytelling.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CATEGORY 2: Engagement & Conversion -->
-                    <div class="space-y-6">
-                        <h3 class="text-xl font-bold uppercase tracking-wider text-zinara-sea-blue mb-4">CATEGORY 2: Engagement & Conversion <span class="text-sm font-normal text-zinara-deep-teal block">(Turning Traffic into Revenue)</span></h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            
-                            <!-- Card 4 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">Conversion Web Design</span>
-                                <p class="text-gray-600">UX/UI optimized, mobile-first, and conversion-driven.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-                            
-                            <!-- Card 5 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">Automation Integration</span>
-                                <p class="text-gray-600">CRM, booking, M-PESA/Pesapal, and email automation.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-
-                            <!-- Card 6 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">Social Funnels</span>
-                                <p class="text-gray-600">Paid and organic strategies to convert followers into leads.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- CATEGORY 3: Retention & Expansion -->
-                    <div class="space-y-6">
-                        <h3 class="text-xl font-bold uppercase tracking-wider text-zinara-sea-blue mb-4">CATEGORY 3: Retention & Expansion <span class="text-sm font-normal text-zinara-deep-teal block">(Maximizing Lifetime Value)</span></h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            
-                            <!-- Card 7 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">Email & Nurture Flows</span>
-                                <p class="text-gray-600">Automated, personalized retention systems.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-                            
-                            <!-- Card 8 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">Reputation Management</span>
-                                <p class="text-gray-600">Reviews, live chat, and brand sentiment tracking.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-
-                            <!-- Card 9 -->
-                            <div class="service-card p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] space-y-3">
-                                <span class="text-3xl font-extrabold text-zinara-deep-teal block mb-2">AI Advisory & DT</span>
-                                <p class="text-gray-600">Integrating AI tools for scalability and productivity.</p>
-                                <a href="#" class="text-sm font-semibold text-zinara-orange hover:text-zinara-sea-blue transition duration-200 block pt-2">Learn More →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <!-- CTA: View All Services (Sea Blue) -->
-                <div class="text-center mt-12">
-                    <a href="#services-grid" class="cta-button bg-zinara-sea-blue text-white px-8 py-3 rounded-xl font-bold text-lg shadow-conversion hover:bg-zinara-sea-blue/90 transition duration-300">
-                        View All Services
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 8. SUCCESS METRICS & CTA BAND -->
-        <section class="py-16 lg:py-24 bg-zinara-deep-teal text-white" id="audit-form">
-            <div class="container mx-auto px-4 max-w-7xl text-center">
-                
-                <h2 class="text-4xl font-extrabold text-zinara-aqua mb-12">Real Numbers. Real Growth.</h2>
-                
-                <!-- Stats Row -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-                    <!-- Stat 1 -->
-                    <div class="stat-box">
-                        <span class="block text-4xl font-extrabold text-zinara-orange">300%</span>
-                        <span class="block text-sm text-gray-300 mt-1">Avg. Revenue Growth in 6 Months</span>
-                    </div>
-                    <!-- Stat 2 -->
-                    <div class="stat-box">
-                        <span class="block text-4xl font-extrabold text-zinara-orange">98%</span>
-                        <span class="block text-sm text-gray-300 mt-1">Client Retention Rate</span>
-                    </div>
-                    <!-- Stat 3 -->
-                    <div class="stat-box">
-                        <span class="block text-4xl font-extrabold text-zinara-orange">50+</span>
-                        <span class="block text-sm text-gray-300 mt-1">SMBs and Enterprises Scaled Globally</span>
-                    </div>
-                    <!-- Stat 4 -->
-                    <div class="stat-box">
-                        <span class="block text-4xl font-extrabold text-zinara-orange">40%</span>
-                        <span class="block text-sm text-gray-300 mt-1">Avg. Cost-per-Lead Reduction</span>
-                    </div>
-                </div>
-
-                <!-- Form Section -->
-                <div class="max-w-xl mx-auto p-8 bg-white rounded-3xl shadow-2xl text-zinara-deep-teal">
-                    <h3 class="text-3xl font-bold mb-3">Ready to grow your business?</h3>
-                    <p class="text-lg mb-6 text-gray-700">Get a free 15-minute growth audit and 3 actionable quick wins tailored to your goals.</p>
-
-                    <!-- Simple High-Conversion Form -->
-                    <form class="audit-form space-y-4">
-                        <input type="text" name="name" placeholder="Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-zinara-sea-blue focus:border-zinara-sea-blue">
-                        <input type="email" name="email" placeholder="Business Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-zinara-sea-blue focus:border-zinara-sea-blue">
-                        <input type="text" name="website" placeholder="Website/Brand Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-zinara-sea-blue focus:border-zinara-sea-blue">
-                        
-                        <!-- Submit Button in Vibrant Orange -->
-                        <button type="submit" class="cta-button w-full bg-zinara-orange text-white px-8 py-3 rounded-lg font-bold text-lg shadow-conversion hover:bg-orange-600 transition duration-300 mt-6">
-                            Get My Audit
-                        </button>
-
-                        <!-- Microcopy for Trust -->
-                        <p class="text-xs text-zinara-gray pt-2">Our Track Record Speaks — No spam. Just real insights.</p>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zinara Digital helps businesses worldwide unleash their digital potential through integrated marketing ecosystems that blend visibility, trust, and conversion — delivering measurable growth.">
+  <title>Zinara Digital | Digital Marketing Agency - Visibility Meets Conversion</title>
+  
+  <style>
+    /* ========== CSS VARIABLES & DESIGN TOKENS ========== */
+    :root {
+      --color-deep-teal: #00303F;
+      --color-blush: #EDDFE0;
+      --color-sea-blue: #006B7D;
+      --color-orange: #FF6B35;
+      --color-aqua: #03A6A1;
+      --color-gray-accent: #7A7A7A;
+      --color-white: #FFFFFF;
+      
+      --spacing-xs: 8px;
+      --spacing-sm: 16px;
+      --spacing-md: 24px;
+      --spacing-lg: 40px;
+      --spacing-xl: 64px;
+      --spacing-xxl: 96px;
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 50px;
+      
+      --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      
+      --container-max: 1400px;
+      --grid-gap: 24px;
+    }
     
-    <!-- 9. FOOTER -->
-    <footer class="bg-zinara-deep-teal text-white py-12" id="contact-footer">
-        <div class="container mx-auto px-4 max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-8">
-            
-            <!-- Company Info / Logo -->
-            <div>
-                <h3 class="text-xl font-extrabold text-white tracking-widest mb-4">ZINARA DIGITAL</h3>
-                <p class="text-sm text-gray-400">Engineering integrated marketing ecosystems for lasting growth and conversion.</p>
-            </div>
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-primary);
+      line-height: 1.6;
+      color: var(--color-deep-teal);
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    
+    /* ========== HEADER (FIXED) ========== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-deep-teal);
+      padding: var(--spacing-sm) 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .header.scrolled {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-white);
+      letter-spacing: -0.5px;
+    }
+    
+    .nav {
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: center;
+    }
+    
+    .nav a {
+      color: var(--color-white);
+      font-size: 0.95rem;
+      transition: opacity 0.3s ease;
+    }
+    
+    .nav a:hover {
+      opacity: 0.8;
+    }
+    
+    .btn-primary {
+      background: var(--color-orange);
+      color: var(--color-white);
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    }
+    
+    .btn-secondary {
+      background: var(--color-sea-blue);
+      color: var(--color-white);
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 107, 125, 0.4);
+    }
+    
+    .btn-text {
+      color: var(--color-sea-blue);
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-text:hover {
+      transform: translateX(4px);
+    }
+    
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+    
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: var(--color-white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: var(--color-blush);
+      padding: calc(80px + var(--spacing-xxl)) 0 var(--spacing-xxl) 0;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+    
+    .hero-text h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-md);
+      color: var(--color-deep-teal);
+      font-weight: 800;
+    }
+    
+    .hero-text .subtext {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-bottom: var(--spacing-lg);
+      color: var(--color-gray-accent);
+    }
+    
+    .hero-ctas {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+      flex-wrap: wrap;
+    }
+    
+    .trust-line {
+      font-size: 0.9rem;
+      color: var(--color-gray-accent);
+      font-style: italic;
+    }
+    
+    .hero-visual {
+      width: 100%;
+      height: 500px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--color-sea-blue), var(--color-deep-teal));
+    }
+    
+    /* ========== TRUST BAND ========== */
+    .trust-band {
+      background: var(--color-gray-accent);
+      padding: var(--spacing-lg) 0;
+    }
+    
+    .trust-tagline {
+      text-align: center;
+      color: var(--color-white);
+      margin-bottom: var(--spacing-md);
+      font-size: 0.95rem;
+    }
+    
+    .logo-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-lg);
+      flex-wrap: wrap;
+    }
+    
+    .partner-logo {
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    
+    .partner-logo:hover {
+      opacity: 1;
+    }
+    
+    /* ========== IDENTITY & MISSION SECTION ========== */
+    .identity-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .identity-left {
+      background: var(--color-blush);
+      padding: var(--spacing-xxl) var(--spacing-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .identity-quote {
+      font-size: 2.5rem;
+      font-style: italic;
+      color: var(--color-deep-teal);
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .identity-copy {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--color-gray-accent);
+    }
+    
+    .identity-right {
+      background: var(--color-gray-accent);
+      padding: var(--spacing-xxl) var(--spacing-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: var(--color-white);
+    }
+    
+    .mission-block, .vision-block {
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .mission-block h3, .vision-block h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-orange);
+    }
+    
+    .mission-block p, .vision-block p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    
+    /* ========== RESULTS & MECHANISM SECTION ========== */
+    .results-section {
+      background: var(--color-deep-teal);
+      color: var(--color-white);
+      padding: var(--spacing-xxl) 0;
+    }
+    
+    .results-content {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+    
+    .results-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .results-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-aqua);
+    }
+    
+    .results-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-md);
+    }
+    
+    .metric-card {
+      background: rgba(255,255,255,0.05);
+      padding: var(--spacing-md);
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .metric-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-aqua);
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .metric-label {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    
+    /* ========== TESTIMONIALS SECTION ========== */
+    .testimonials-section {
+      background: var(--color-white);
+      padding: var(--spacing-xxl) 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--color-deep-teal);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--color-gray-accent);
+    }
+    
+    .testimonials-carousel {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      display: none;
+      background: var(--color-blush);
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-lg);
+      align-items: center;
+      gap: var(--spacing-lg);
+    }
+    
+    .testimonial-card.active {
+      display: flex;
+    }
+    
+    .testimonial-image {
+      flex-shrink: 0;
+    }
+    
+    .stars {
+      color: var(--color-orange);
+      font-size: 1.2rem;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .testimonial-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: var(--spacing-md);
+      color: var(--color-deep-teal);
+    }
+    
+    .testimonial-author {
+      font-size: 0.95rem;
+      color: var(--color-gray-accent);
+    }
+    
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-md);
+    }
+    
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-sea-blue);
+      color: var(--color-white);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-btn:hover {
+      background: var(--color-deep-teal);
+      transform: scale(1.1);
+    }
+    
+    /* ========== SERVICES SECTION ========== */
+    .services-section {
+      background: var(--color-blush);
+      padding: var(--spacing-xxl) 0;
+    }
+    
+    .services-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto var(--spacing-xl) auto;
+    }
+    
+    .services-intro h2 {
+      font-size: 2.5rem;
+      color: var(--color-deep-teal);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .services-intro p {
+      font-size: 1.1rem;
+      color: var(--color-gray-accent);
+    }
+    
+    .service-category {
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .category-header {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .category-header h3 {
+      font-size: 2rem;
+      color: var(--color-deep-teal);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .category-header p {
+      font-size: 1rem;
+      color: var(--color-gray-accent);
+      font-style: italic;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-md);
+    }
+    
+    .service-card {
+      background: var(--color-white);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+      border-color: var(--color-sea-blue);
+    }
+    
+    .service-card.featured {
+      background: linear-gradient(135deg, var(--color-white), var(--color-blush));
+      border-color: var(--color-orange);
+    }
+    
+    .service-icon {
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: var(--color-deep-teal);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .service-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-gray-accent);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .service-link {
+      color: var(--color-sea-blue);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    
+    .service-link:hover {
+      transform: translateX(4px);
+    }
+    
+    .view-all-services {
+      text-align: center;
+      margin-top: var(--spacing-xl);
+    }
+    
+    /* ========== SUCCESS METRICS + CTA BAND ========== */
+    .final-cta-section {
+      background: var(--color-deep-teal);
+      color: var(--color-white);
+      padding: var(--spacing-xxl) 0;
+    }
+    
+    .cta-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .cta-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: var(--spacing-md);
+    }
+    
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--color-orange);
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .cta-form-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .cta-form-wrapper h3 {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .cta-form-wrapper .subtext {
+      font-size: 1.1rem;
+      margin-bottom: var(--spacing-lg);
+      opacity: 0.9;
+    }
+    
+    .audit-form {
+      background: rgba(255,255,255,0.05);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-md);
+    }
+    
+    .form-group {
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      border: 2px solid transparent;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: var(--color-white);
+      color: var(--color-deep-teal);
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--color-orange);
+    }
+    
+    .form-submit {
+      width: 100%;
+      background: var(--color-orange);
+      color: var(--color-white);
+      padding: 16px 32px;
+      border-radius: var(--radius-pill);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(255, 107, 53, 0.4);
+    }
+    
+    .form-microcopy {
+      font-size: 0.85rem;
+      margin-top: var(--spacing-sm);
+      font-style: italic;
+      opacity: 0.8;
+    }
+    
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--color-deep-teal);
+      color: var(--color-white);
+      padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .footer-brand h3 {
+      font-size: 1.75rem;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .footer-brand p {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+    
+    .footer-links h4 {
+      font-size: 1.1rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-orange);
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links ul li {
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .footer-links ul li a {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    
+    .footer-links ul li a:hover {
+      opacity: 1;
+    }
+    
+    .footer-contact p {
+      margin-bottom: var(--spacing-xs);
+      font-size: 0.95rem;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: var(--spacing-md);
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+      }
+      
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .results-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+      
+      .hero {
+        padding: calc(60px + var(--spacing-lg)) 0 var(--spacing-lg) 0;
+      }
+      
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-text .subtext {
+        font-size: 1rem;
+      }
+      
+      .identity-section {
+        grid-template-columns: 1fr;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .stats-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .hero-ctas {
+        flex-direction: column;
+      }
+      
+      .logo-strip {
+        gap: var(--spacing-sm);
+      }
+      
+      .partner-logo svg {
+        width: 100px;
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
 
-            <!-- Footer Navigation -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4 text-zinara-aqua">Quick Links</h4>
-                <ul class="space-y-2 text-sm text-gray-300">
-                    <li><a href="#about" class="hover:text-zinara-orange transition duration-200">About Us</a></li>
-                    <li><a href="#services-grid" class="hover:text-zinara-orange transition duration-200">Services</a></li>
-                    <li><a href="#portfolio" class="hover:text-zinara-orange transition duration-200">Case Studies</a></li>
-                    <li><a href="#blog" class="hover:text-zinara-orange transition duration-200">Blog</a></li>
-                </ul>
-            </div>
-
-            <!-- Legal Links -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4 text-zinara-aqua">Legal & Support</h4>
-                <ul class="space-y-2 text-sm text-gray-300">
-                    <li><a href="#" class="hover:text-zinara-orange transition duration-200">Contact</a></li>
-                    <li><a href="#" class="hover:text-zinara-orange transition duration-200">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-zinara-orange transition duration-200">Terms of Service</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Details -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4 text-zinara-aqua">Get In Touch</h4>
-                <address class="space-y-2 text-sm not-italic text-gray-300">
-                    <a href="mailto:hello@zinaradigital.com" class="hover:text-zinara-orange transition duration-200 block">hello@zinaradigital.com</a>
-                    <a href="tel:+254700000000" class="hover:text-zinara-orange transition duration-200 block">+254 700 000 000</a>
-                    <p class="mt-4">Global Clients Supported</p>
-                </address>
-            </div>
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">Zinara</a>
+        <nav class="nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#audit" class="btn-primary">Get Started</a>
+        </nav>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+      </div>
+    </div>
+  </header>
 
-        <!-- Copyright -->
-        <div class="container mx-auto px-4 max-w-7xl text-center mt-10 border-t border-gray-700 pt-6">
-            <p class="text-sm text-gray-500">
-                &copy; 2025 Zinara Digital Marketing. All Rights Reserved.
-            </p>
-            <p class="text-xs text-gray-600 mt-1">SEO & AI Optimization Phrase: Zinara Digital helps global businesses unleash their digital potential through integrated marketing ecosystems that drive visibility, trust, and conversions.</p>
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Unleash Your Digital Potential — Where Visibility Meets Conversion.</h1>
+          <p class="subtext">Zinara Digital helps brands transform visibility into growth through strategic marketing ecosystems built for performance, not promises.</p>
+          <div class="hero-ctas">
+            <a href="#audit" class="btn-primary" data-test="hero-primary-cta">Get Your Free Growth Audit</a>
+            <a href="#services" class="btn-text">Explore Our Services →</a>
+          </div>
+          <p class="trust-line">Trusted by 500+ global brands, startups, and creators.</p>
         </div>
-    </footer>
+        
+        <div class="hero-visual">
+          <div class="video-placeholder">
+            <svg width="100%" height="100%" viewBox="0 0 600 500">
+              <defs>
+                <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#006B7D;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#00303F;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <rect width="600" height="500" fill="url(#heroGrad)"/>
+              <circle cx="300" cy="250" r="80" fill="rgba(255,107,53,0.2)" opacity="0.5"/>
+              <circle cx="300" cy="250" r="60" fill="rgba(255,107,53,0.3)" opacity="0.7"/>
+              <circle cx="300" cy="250" r="40" fill="rgba(255,107,53,0.5)"/>
+              <text x="300" y="250" text-anchor="middle" fill="#fff" font-size="20" font-weight="600" dy=".3em">Your Growth.</text>
+              <text x="300" y="280" text-anchor="middle" fill="#fff" font-size="16" opacity="0.8">Simplified.</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST BAND ========== -->
+  <section class="trust-band">
+    <div class="container">
+      <p class="trust-tagline">Powering global growth through trusted digital partnerships.</p>
+      <div class="logo-strip">
+        <div class="partner-logo">
+          <svg width="120" height="60" viewBox="0 0 120 60">
+            <rect width="120" height="60" fill="#e0e0e0" rx="4"/>
+            <text x="60" y="35" text-anchor="middle" fill="#7A7A7A" font-size="12" font-weight="600">Canva</text>
+          </svg>
+        </div>
+        <div class="partner-logo">
+          <svg width="120" height="60" viewBox="0 0 120 60">
+            <rect width="120" height="60" fill="#e0e0e0" rx="4"/>
+            <text x="60" y="35" text-anchor="middle" fill="#7A7A7A" font-size="11" font-weight="600">Mailchimp</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== IDENTITY & MISSION SECTION ========== -->
+  <section class="identity-section" id="about">
+    <div class="identity-left">
+      <p class="identity-quote">"For those who refuse to stay invisible."</p>
+      <p class="identity-copy">Zinara helps entrepreneurs, creators, and businesses turn visibility into growth. We engineer digital ecosystems powered by strategy, storytelling, and precision — designed for those who refuse to stay invisible.</p>
+    </div>
+    
+    <div class="identity-right">
+      <div class="mission-block">
+        <h3>Mission</h3>
+        <p>Amplify business stories through smart digital marketing that builds trust and drives growth.</p>
+      </div>
+      
+      <div class="vision-block">
+        <h3>Vision</h3>
+        <p>A world where every business thrives with credible digital presence and global reach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESULTS & MECHANISM SECTION ========== -->
+  <section class="results-section">
+    <div class="container">
+      <div class="results-content">
+        <div class="results-text">
+          <h2>How We Drive Measurable Growth</h2>
+          <h3>We're not just an agency — we're your strategic ally.</h3>
+          <p>By combining creativity, technology, and data, we design systems that turn potential into performance and visibility into influence.</p>
+          <a href="#case-studies" class="btn-secondary">See Our Results</a>
+        </div>
+        
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-number" data-count="50">0</span>
+            <span class="metric-label">Businesses Grown</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number" data-count="250">0</span>
+            <span class="metric-label">% Revenue Increase</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number" data-count="98">0</span>
+            <span class="metric-label">% Client Retention</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number" data-count="300">0</span>
+            <span class="metric-label">% Average Growth</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section class="testimonials-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Clients Say</h2>
+        <p>Real voices. Real results. Real partnerships.</p>
+      </div>
+      
+      <div class="testimonials-carousel">
+        <div class="testimonial-card active" data-testimonial="1">
+          <div class="testimonial-image">
+            <svg width="80" height="80" viewBox="0 0 80 80">
+              <circle cx="40" cy="40" r="40" fill="#006B7D"/>
+              <circle cx="40" cy="35" r="12" fill="#fff"/>
+              <path d="M 20 65 Q 40 55 60 65" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="testimonial-content">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Zinara redefined our event marketing success. Their automation and social media campaigns helped us sell out three major events and cut admin time by 60%."</p>
+            <p class="testimonial-author"><strong>Joseph Mwangi</strong>, Founder, UrbanTribe Events</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card" data-testimonial="2">
+          <div class="testimonial-image">
+            <svg width="80" height="80" viewBox="0 0 80 80">
+              <circle cx="40" cy="40" r="40" fill="#FF6B35"/>
+              <circle cx="40" cy="35" r="12" fill="#fff"/>
+              <path d="M 20 65 Q 40 55 60 65" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="testimonial-content">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Zinara transformed our salon's digital journey. Customer base grew by 40%, and automation improved efficiency across all departments."</p>
+            <p class="testimonial-author"><strong>Azma Suleiman</strong>, Operations Manager, GlamFix Beauty Parlour</p>
+          </div>
+        </div>
+        
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn">‹</button>
+          <button class="carousel-btn" id="nextBtn">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="services-intro">
+        <h2>Our Services</h2>
+        <p>Comprehensive digital marketing solutions designed to grow your business at every stage.</p>
+      </div>
+      
+      <!-- Category 1: Visibility & Authority -->
+      <div class="service-category">
+        <div class="category-header">
+          <h3>Visibility & Authority</h3>
+          <p>Build dominance and trust in your market</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card featured">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#03A6A1" rx="8"/>
+                <path d="M 20 30 L 30 40 L 45 20" stroke="#fff" stroke-width="3" fill="none"/>
+              </svg>
+            </div>
+            <h3>SEO Mastery</h3>
+            <p>Technical, On-Page, and Link Building strategies that dominate search rankings.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+          
+          <div class="service-card featured">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#FF6B35" rx="8"/>
+                <circle cx="30" cy="25" r="8" stroke="#fff" stroke-width="2" fill="none"/>
+                <path d="M 22 35 L 30 30 L 38 35 L 30 42 Z" fill="#fff"/>
+              </svg>
+            </div>
+            <h3>High-ROI Paid Ads</h3>
+            <p>Google & Meta campaigns optimized for maximum return and precise targeting.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+          
+          <div class="service-card featured">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#006B7D" rx="8"/>
+                <rect x="15" y="15" width="30" height="30" rx="2" stroke="#fff" stroke-width="2" fill="none"/>
+                <line x1="20" y1="25" x2="40" y2="25" stroke="#fff" stroke-width="2"/>
+                <line x1="20" y1="30" x2="40" y2="30" stroke="#fff" stroke-width="2"/>
+                <line x1="20" y1="35" x2="35" y2="35" stroke="#fff" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Authority Content</h3>
+            <p>Blogging and copywriting that builds trust and drives organic growth.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Category 2: Engagement & Conversion -->
+      <div class="service-category">
+        <div class="category-header">
+          <h3>Engagement & Conversion</h3>
+          <p>Turn visitors into customers</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#03A6A1" rx="8"/>
+                <rect x="12" y="15" width="36" height="25" rx="2" stroke="#fff" stroke-width="2" fill="none"/>
+                <line x1="12" y1="22" x2="48" y2="22" stroke="#fff" stroke-width="2"/>
+                <circle cx="18" cy="18.5" r="1.5" fill="#fff"/>
+                <circle cx="23" cy="18.5" r="1.5" fill="#fff"/>
+                <circle cx="28" cy="18.5" r="1.5" fill="#fff"/>
+              </svg>
+            </div>
+            <h3>Conversion Web Design</h3>
+            <p>UX/UI-optimized websites that turn visitors into customers.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#FF6B35" rx="8"/>
+                <path d="M 25 20 L 25 40 M 35 20 L 35 40" stroke="#fff" stroke-width="2"/>
+                <circle cx="25" cy="20" r="3" fill="#fff"/>
+                <circle cx="25" cy="30" r="3" fill="#fff"/>
+                <circle cx="25" cy="40" r="3" fill="#fff"/>
+                <circle cx="35" cy="20" r="3" fill="#fff"/>
+                <circle cx="35" cy="30" r="3" fill="#fff"/>
+                <circle cx="35" cy="40" r="3" fill="#fff"/>
+                <path d="M 28 20 L 32 20 M 28 30 L 32 30 M 28 40 L 32 40" stroke="#fff" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Automation Integration</h3>
+            <p>CRM and payment systems that streamline operations and boost efficiency.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#006B7D" rx="8"/>
+                <path d="M 30 15 L 35 25 L 45 25 L 37 32 L 40 42 L 30 35 L 20 42 L 23 32 L 15 25 L 25 25 Z" fill="#fff"/>
+              </svg>
+            </div>
+            <h3>Social Funnels</h3>
+            <p>Paid and organic social strategies that engage and convert audiences.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Category 3: Retention & Expansion -->
+      <div class="service-category">
+        <div class="category-header">
+          <h3>Retention & Expansion</h3>
+          <p>Maximize lifetime value</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#03A6A1" rx="8"/>
+                <rect x="15" y="20" width="30" height="20" rx="2" stroke="#fff" stroke-width="2" fill="none"/>
+                <path d="M 15 23 L 30 32 L 45 23" stroke="#fff" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <h3>Email & Nurture Flows</h3>
+            <p>Automated retention systems that maximize customer lifetime value.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#FF6B35" rx="8"/>
+                <circle cx="30" cy="30" r="12" stroke="#fff" stroke-width="2" fill="none"/>
+                <path d="M 25 30 L 28 33 L 36 25" stroke="#fff" stroke-width="2" fill="none"/>
+                <path d="M 30 18 L 30 14 M 30 46 L 30 42 M 42 30 L 46 30 M 14 30 L 18 30" stroke="#fff" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Customer Care & Reputation</h3>
+            <p>Review management and live chat that build lasting customer relationships.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="60" height="60" viewBox="0 0 60 60">
+                <rect width="60" height="60" fill="#006B7D" rx="8"/>
+                <circle cx="25" cy="30" r="8" stroke="#fff" stroke-width="2" fill="none"/>
+                <circle cx="38" cy="22" r="5" stroke="#fff" stroke-width="2" fill="none"/>
+                <circle cx="38" cy="38" r="5" stroke="#fff" stroke-width="2" fill="none"/>
+                <line x1="32" y1="28" x2="34" y2="24" stroke="#fff" stroke-width="2"/>
+                <line x1="32" y1="32" x2="34" y2="36" stroke="#fff" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>AI Advisory & Digital Transformation</h3>
+            <p>Smart tools and strategies that future-proof your business growth.</p>
+            <a href="#" class="service-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="view-all-services">
+        <a href="#all-services" class="btn-primary">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SUCCESS METRICS + CTA BAND ========== -->
+  <section class="final-cta-section" id="audit">
+    <div class="container">
+      <div class="cta-header">
+        <h2>Real Numbers. Real Growth.</h2>
+      </div>
+      
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-number">300%</span>
+          <span class="stat-label">Average Revenue Growth (6 Months)</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Client Retention Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Brands Scaled</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">40%</span>
+          <span class="stat-label">Cost-Per-Lead Reduction</span>
+        </div>
+      </div>
+      
+      <div class="cta-form-wrapper">
+        <h3>Ready to Grow Your Business?</h3>
+        <p class="subtext">Get a free 15-minute growth audit and 3 actionable quick wins.</p>
+        
+        <form class="audit-form" id="auditForm">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Business Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="website" placeholder="Website/Brand URL" required>
+          </div>
+          <button type="submit" class="form-submit" data-test="audit-form-submit">Get My Audit</button>
+          <p class="form-microcopy">Our Track Record Speaks — No spam. Just strategy.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Zinara</h3>
+          <p>Digital Marketing Agency</p>
+          <p style="margin-top: 16px;">Transforming visibility into measurable growth through strategic marketing ecosystems.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Case Studies</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#seo">SEO Optimization</a></li>
+            <li><a href="#paid-ads">Paid Advertising</a></li>
+            <li><a href="#web-design">Web Design</a></li>
+            <li><a href="#automation">Marketing Automation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>Email: hello@zinaradigital.com</p>
+          <p>Phone: +254 700 000 000</p>
+          <p>Location: Global</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Zinara Digital Marketing. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Testimonial carousel
+    let currentTestimonial = 1;
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const totalTestimonials = testimonials.length;
+    
+    function showTestimonial(n) {
+      testimonials.forEach(card => card.classList.remove('active'));
+      if (n > totalTestimonials) currentTestimonial = 1;
+      if (n < 1) currentTestimonial = totalTestimonials;
+      testimonials[currentTestimonial - 1].classList.add('active');
+    }
+    
+    document.getElementById('nextBtn').addEventListener('click', function() {
+      currentTestimonial++;
+      showTestimonial(currentTestimonial);
+    });
+    
+    document.getElementById('prevBtn').addEventListener('click', function() {
+      currentTestimonial--;
+      showTestimonial(currentTestimonial);
+    });
+    
+    // Auto-rotate testimonials (optional)
+    setInterval(function() {
+      currentTestimonial++;
+      showTestimonial(currentTestimonial);
+    }, 5000);
+    
+    // Animated counters for metrics
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute('data-count'));
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+      
+      const timer = setInterval(function() {
+        current += step;
+        if (current >= target) {
+          element.textContent = target + (element.textContent.includes('%') ? '%' : '+');
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current) + (element.textContent.includes('%') ? '%' : '+');
+        }
+      }, 16);
+    }
+    
+    // Trigger counter animation when section is visible
+    const observerOptions = {
+      threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('[data-count]');
+          counters.forEach(counter => {
+            if (counter.textContent === '0') {
+              animateCounter(counter);
+            }
+          });
+        }
+      });
+    }, observerOptions);
+    
+    const resultsSection = document.querySelector('.results-section');
+    if (resultsSection) {
+      observer.observe(resultsSection);
+    }
+    
+    // Form submission handler
+    document.getElementById('auditForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        website: this.website.value
+      };
+      
+      // Log to console for debugging
+      console.log('Form submitted:', formData);
+      
+      // Here you would normally send to your CRM/backend
+      // Example: fetch('YOUR_ENDPOINT', { method: 'POST', body: JSON.stringify(formData) })
+      
+      // Show success message
+      alert('Thank you! We\'ll be in touch within 24 hours with your free growth audit.');
+      this.reset();
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Mobile menu toggle (simple implementation)
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      const nav = document.querySelector('.nav');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
 
 </body>
-</html>
+</html>A7A7A" font-size="12" font-weight="600">Google Partner</text>
+          </svg>
+        </div>
+        <div class="partner-logo">
+          <svg width="120" height="60" viewBox="0 0 120 60">
+            <rect width="120" height="60" fill="#e0e0e0" rx="4"/>
+            <text x="60" y="35" text-anchor="middle" fill="#7A7A7A" font-size="14" font-weight="600">Meta</text>
+          </svg>
+        </div>
+        <div class="partner-logo">
+          <svg width="120" height="60" viewBox="0 0 120 60">
+            <rect width="120" height="60" fill="#e0e0e0" rx="4"/>
+            <text x="60" y="35" text-anchor="middle" fill="#7A7A7A" font-size="12" font-weight="600">HubSpot</text>
+          </svg>
+        </div>
+        <div class="partner-logo">
+          <svg width="120" height="60" viewBox="0 0 120 60">
+            <rect width="120" height="60" fill="#e0e0e0" rx="4"/>
+            <text x="60" y="35" text-anchor="middle" fill="#7A7A7A" font-size="12" font-weight="600">Shopify</text>
+          </svg>
+        </div>
+        <div class="partner-logo">
+          <svg width="120" height="60" viewBox="0 0 120 60">
+            <rect width="120" height="60" fill="#e0e0e0" rx="4"/>
+            <text x="60" y="35" text-anchor="middle" fill="#7
