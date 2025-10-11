@@ -132,6 +132,11 @@
       padding: 0;
     }
     
+    .btn-large {
+      padding: 18px 40px;
+      font-size: 1.15rem;
+    }
+    
     .mobile-menu {
       display: none;
       background: none;
@@ -474,61 +479,6 @@
     .see-all-services {
       text-align: center;
       margin-top: var(--spacing-xl);
-    }(--spacing-xs);
-      font-weight: 700;
-    }
-    
-    .category-header p {
-      font-size: 1rem;
-      color: var(--gray-accent);
-      font-style: italic;
-    }
-    
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--spacing-md);
-    }
-    
-    .service-card {
-      background: var(--white);
-      padding: var(--spacing-lg);
-      border-radius: var(--radius-md);
-      transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-    
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-    }
-    
-    .service-card.featured {
-      border: 2px solid var(--orange);
-    }
-    
-    .service-icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: var(--spacing-md);
-    }
-    
-    .service-card h4 {
-      font-size: 1.3rem;
-      color: var(--sea-blue);
-      margin-bottom: var(--spacing-sm);
-      font-weight: 600;
-    }
-    
-    .service-card p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--gray-accent);
-    }
-    
-    .view-all {
-      text-align: center;
-      margin-top: var(--spacing-xl);
     }
     
     .final-cta-section {
@@ -852,6 +802,13 @@
           <p class="testimonial-text">"Zinara redefined our event marketing success. Their automation and social media campaigns helped us sell out three major events and cut admin time by 60%."</p>
           <p class="testimonial-author"><strong>Joseph Mwangi</strong>, Founder, UrbanTribe Events</p>
         </div>
+        
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Zinara transformed our salon's digital journey. Customer base grew by 40%, and automation improved efficiency across all departments."</p>
+          <p class="testimonial-author"><strong>Azma Suleiman</strong>, Operations Manager, GlamFix Beauty Parlour</p>
+        </div>
+        
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">"Working with Zinara Digital Marketing transformed how families find our care. Their social media work, customer care, and online reputation management amplified our message, increased trust, and helped us connect with more families through prompt, compassionate support."</p>
@@ -877,7 +834,6 @@
       <p class="services-intro-text">Comprehensive digital marketing solutions organized into four strategic pillars designed to build, engage, and retain your ideal customers.</p>
       
       <div class="service-categories-grid">
-        <!-- Category 1: Visibility & Authority -->
         <div class="service-category-block">
           <svg class="category-icon-large" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="48" fill="#03A6A1" opacity="0.1"/>
@@ -888,7 +844,6 @@
           <p>SEO mastery, high-ROI paid ads, and authority content that builds trust and dominates search rankings.</p>
         </div>
         
-        <!-- Category 2: Engagement & Conversion -->
         <div class="service-category-block">
           <svg class="category-icon-large" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="48" fill="#FF6B35" opacity="0.1"/>
@@ -902,7 +857,6 @@
           <p>Conversion-focused web design, automation integration, and social funnels that turn visitors into customers.</p>
         </div>
         
-        <!-- Category 3: Retention & Expansion -->
         <div class="service-category-block">
           <svg class="category-icon-large" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="48" fill="#006B7D" opacity="0.1"/>
@@ -913,7 +867,6 @@
           <p>Email nurture flows, customer care, and reputation management that maximize lifetime value.</p>
         </div>
         
-        <!-- Category 4: Digital Transformation -->
         <div class="service-category-block">
           <svg class="category-icon-large" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="48" fill="#03A6A1" opacity="0.1"/>
@@ -930,39 +883,6 @@
       
       <div class="see-all-services">
         <a href="#all-services" class="btn btn-secondary btn-large">See All Services</a>
-      </div>
-    </div>
-  </section><a href="#reputation" class="service-link-arrow">Learn More →</a>
-          </div>
-          
-          <div class="service-card-large">
-            <div class="service-icon-large">
-              <svg viewBox="0 0 80 80" width="80" height="80">
-                <rect width="80" height="80" fill="#006B7D" rx="12"/>
-                <circle cx="30" cy="40" r="12" stroke="#fff" stroke-width="3" fill="none"/>
-                <circle cx="50" cy="28" r="8" stroke="#fff" stroke-width="3" fill="none"/>
-                <circle cx="50" cy="52" r="8" stroke="#fff" stroke-width="3" fill="none"/>
-                <line x1="40" y1="36" x2="44" y2="32" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-                <line x1="40" y1="44" x2="44" y2="48" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h4>AI Advisory & Digital Transformation</h4>
-            <p class="service-description">Future-proof your business with cutting-edge AI tools and digital transformation strategies. We help you identify, implement, and optimize smart technologies that drive efficiency, enhance decision-making, and unlock new growth opportunities.</p>
-            <ul class="service-features">
-              <li>AI tool assessment and implementation</li>
-              <li>Marketing automation with AI</li>
-              <li>Predictive analytics and insights</li>
-              <li>Chatbot and conversational AI setup</li>
-              <li>Digital transformation roadmapping</li>
-            </ul>
-            <a href="#ai" class="service-link-arrow">Learn More →</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="view-all-services">
-        <p class="view-all-text">Ready to explore how these services can transform your business?</p>
-        <a href="#contact" class="btn btn-primary btn-large">Schedule Your Free Consultation</a>
       </div>
     </div>
   </section>
