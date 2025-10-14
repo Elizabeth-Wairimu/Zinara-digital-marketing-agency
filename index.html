@@ -1,1070 +1,2099 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zinara Digital helps businesses worldwide unleash their digital potential through integrated marketing ecosystems that blend visibility, trust, and conversion — delivering measurable growth.">
-  <meta name="keywords" content="digital marketing agency, SEO optimization, online growth, business visibility, conversion systems, automation">
-  <title>Zinara Digital | Digital Marketing Agency - Visibility Meets Conversion</title>
-  
-  <style>
-    :root {
-      --deep-teal: #00303F;
-      --blush: #EDDFE0;
-      --sea-blue: #006B7D;
-      --orange: #FF6B35;
-      --aqua: #03A6A1;
-      --gray-accent: #7A7A7A;
-      --white: #FFFFFF;
-      --spacing-xs: 8px;
-      --spacing-sm: 16px;
-      --spacing-md: 24px;
-      --spacing-lg: 40px;
-      --spacing-xl: 64px;
-      --spacing-xxl: 96px;
-      --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-pill: 50px;
-      --container: 1200px;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
-      color: var(--deep-teal);
-    }
-    
-    .container {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 var(--spacing-md);
-    }
-    
-    .header {
-      background: var(--deep-teal);
-      padding: var(--spacing-sm) 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    .logo {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
-    }
-    
-    .nav {
-      display: flex;
-      gap: var(--spacing-lg);
-      list-style: none;
-      align-items: center;
-    }
-    
-    .nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: opacity 0.3s;
-    }
-    
-    .nav a:hover {
-      opacity: 0.7;
-    }
-    
-    .btn {
-      padding: 12px 28px;
-      border-radius: var(--radius-pill);
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s;
-      cursor: pointer;
-      border: none;
-      font-size: 1rem;
-    }
-    
-    .btn-primary {
-      background: var(--orange);
-      color: var(--white);
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255,107,53,0.3);
-    }
-    
-    .btn-secondary {
-      background: var(--sea-blue);
-      color: var(--white);
-    }
-    
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,107,125,0.3);
-    }
-    
-    .btn-aqua {
-      background: var(--aqua);
-      color: var(--white);
-    }
-    
-    .btn-text {
-      color: var(--sea-blue);
-      font-weight: 600;
-      background: none;
-      padding: 0;
-    }
-    
-    .btn-large {
-      padding: 18px 40px;
-      font-size: 1.15rem;
-    }
-    
-    .mobile-menu {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    
-    .hero {
-      background: linear-gradient(135deg, rgba(0, 107, 125, 0.9), rgba(0, 48, 63, 0.9)), 
-                  linear-gradient(to bottom, var(--blush), var(--blush));
-      background-blend-mode: overlay;
-      padding: calc(80px + var(--spacing-xxl)) 0 var(--spacing-xxl) 0;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('hero-image-placeholder.jpg') center/cover no-repeat;
-      opacity: 0.15;
-      z-index: 0;
-    }
-    
-    .hero .container {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .hero-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: var(--spacing-lg);
-    }
-    
-    .hero-left {
-      max-width: 900px;
-    }
-    
-    .hero-left h1 {
-      font-size: 3.5rem;
-      line-height: 1.1;
-      margin-bottom: var(--spacing-md);
-      font-weight: 800;
-      color: var(--white);
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-    
-    .hero-left .subtext {
-      font-size: 1.25rem;
-      line-height: 1.7;
-      color: var(--white);
-      margin-bottom: var(--spacing-lg);
-      opacity: 0.95;
-    }
-    
-    .hero-actions {
-      display: flex;
-      gap: var(--spacing-sm);
-      margin-bottom: var(--spacing-md);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .trust-line {
-      font-size: 0.95rem;
-      color: var(--white);
-      font-style: italic;
-      opacity: 0.9;
-    }
-    
-    .trust-band {
-      background: var(--gray-accent);
-      padding: var(--spacing-lg) 0;
-      margin-bottom: calc(var(--spacing-xxl) + var(--spacing-xl));
-    }
-    
-    .trust-tagline {
-      text-align: center;
-      color: var(--white);
-      margin-bottom: var(--spacing-md);
-      font-size: 0.95rem;
-    }
-    
-    .logo-strip {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing-lg);
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    
-    .partner-logo {
-      background: rgba(255,255,255,0.1);
-      padding: var(--spacing-sm) var(--spacing-md);
-      border-radius: var(--radius-sm);
-      color: var(--white);
-      font-size: 0.9rem;
-      font-weight: 600;
-      opacity: 0.7;
-      transition: opacity 0.3s;
-    }
-    
-    .partner-logo:hover {
-      opacity: 1;
-    }
-    
-    .identity-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    
-    .identity-left {
-      background: var(--blush);
-      padding: var(--spacing-xxl) var(--spacing-xl);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    
-    .identity-quote {
-      font-size: 2.5rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--deep-teal);
-      margin-bottom: var(--spacing-md);
-      line-height: 1.3;
-    }
-    
-    .identity-copy {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--gray-accent);
-    }
-    
-    .identity-right {
-      background: var(--gray-accent);
-      padding: var(--spacing-xxl) var(--spacing-xl);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: var(--white);
-    }
-    
-    .mission-block, .vision-block {
-      margin-bottom: var(--spacing-lg);
-    }
-    
-    .mission-block h3, .vision-block h3 {
-      font-size: 1.5rem;
-      margin-bottom: var(--spacing-sm);
-      color: var(--orange);
-    }
-    
-    .mission-block p, .vision-block p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-    
-    .results-section {
-      background: var(--deep-teal);
-      color: var(--white);
-      padding: var(--spacing-xxl) 0;
-    }
-    
-    .results-grid {
-      display: grid;
-      grid-template-columns: 1.8fr 1fr;
-      gap: var(--spacing-xl);
-      align-items: center;
-    }
-    
-    .results-left h2 {
-      font-size: 2.5rem;
-      margin-bottom: var(--spacing-md);
-      font-weight: 700;
-    }
-    
-    .results-left h3 {
-      font-size: 1.5rem;
-      margin-bottom: var(--spacing-sm);
-      color: var(--aqua);
-      font-weight: 600;
-    }
-    
-    .results-left p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: var(--spacing-lg);
-    }
-    
-    .metrics-box {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-    }
-    
-    .metric {
-      background: rgba(255,255,255,0.05);
-      padding: var(--spacing-md);
-      border-radius: var(--radius-sm);
-      text-align: center;
-    }
-    
-    .metric-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--aqua);
-      display: block;
-      margin-bottom: var(--spacing-xs);
-    }
-    
-    .metric-label {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-    
-    .testimonials-section {
-      background: var(--white);
-      padding: var(--spacing-xxl) 0;
-    }
-    
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      color: var(--sea-blue);
-      margin-bottom: var(--spacing-xl);
-      font-weight: 700;
-    }
-    
-    .testimonials-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .testimonial-card {
-      background: var(--blush);
-      padding: var(--spacing-xl);
-      border-radius: var(--radius-md);
-      display: none;
-    }
-    
-    .testimonial-card.active {
-      display: block;
-    }
-    
-    .stars {
-      color: var(--orange);
-      font-size: 1.5rem;
-      margin-bottom: var(--spacing-sm);
-    }
-    
-    .testimonial-text {
-      font-size: 1.3rem;
-      line-height: 1.7;
-      font-style: italic;
-      color: var(--deep-teal);
-      margin-bottom: var(--spacing-md);
-    }
-    
-    .testimonial-author {
-      font-size: 1rem;
-      color: var(--gray-accent);
-      font-weight: 600;
-    }
-    
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing-sm);
-      margin-top: var(--spacing-lg);
-    }
-    
-    .carousel-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--sea-blue);
-      color: var(--white);
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .carousel-btn:hover {
-      background: var(--orange);
-      transform: scale(1.1);
-    }
-    
-    .services-section {
-      background: var(--white);
-      padding: var(--spacing-xxl) 0;
-    }
-    
-    .services-intro-text {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto var(--spacing-xxl) auto;
-      font-size: 1.15rem;
-      color: var(--gray-accent);
-      line-height: 1.8;
-    }
-    
-    .service-categories-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--spacing-xl);
-      margin-bottom: var(--spacing-xl);
-    }
-    
-    .service-category-block {
-      text-align: center;
-      padding: var(--spacing-lg);
-    }
-    
-    .category-icon-large {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto var(--spacing-md);
-    }
-    
-    .service-category-block h3 {
-      font-size: 1.5rem;
-      color: var(--sea-blue);
-      margin-bottom: var(--spacing-sm);
-      font-weight: 700;
-    }
-    
-    .service-category-block p {
-      font-size: 1rem;
-      color: var(--gray-accent);
-      line-height: 1.6;
-    }
-    
-    .see-all-services {
-      text-align: center;
-      margin-top: var(--spacing-xl);
-    }
-    
-    .final-cta-section {
-      background: var(--deep-teal);
-      color: var(--white);
-      padding: var(--spacing-xxl) 0;
-    }
-    
-    .final-cta-section .section-title {
-      color: var(--white);
-    }
-    
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--spacing-md);
-      margin-bottom: var(--spacing-xl);
-    }
-    
-    .stat-item {
-      text-align: center;
-      padding: var(--spacing-md);
-    }
-    
-    .stat-number {
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--aqua);
-      display: block;
-      margin-bottom: var(--spacing-xs);
-    }
-    
-    .stat-label {
-      font-size: 1rem;
-      opacity: 0.9;
-      line-height: 1.4;
-    }
-    
-    .cta-form-wrapper {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .cta-form-wrapper h3 {
-      font-size: 2rem;
-      margin-bottom: var(--spacing-sm);
-    }
-    
-    .cta-form-wrapper .subtext {
-      font-size: 1.1rem;
-      margin-bottom: var(--spacing-lg);
-      opacity: 0.9;
-    }
-    
-    .audit-form {
-      background: rgba(255,255,255,0.05);
-      padding: var(--spacing-lg);
-      border-radius: var(--radius-md);
-    }
-    
-    .form-group {
-      margin-bottom: var(--spacing-md);
-    }
-    
-    .form-group input {
-      width: 100%;
-      padding: 14px 20px;
-      border-radius: var(--radius-sm);
-      border: 2px solid transparent;
-      font-size: 1rem;
-      background: var(--white);
-      color: var(--deep-teal);
-    }
-    
-    .form-group input:focus {
-      outline: none;
-      border-color: var(--orange);
-    }
-    
-    .form-submit {
-      width: 100%;
-      background: var(--orange);
-      color: var(--white);
-      padding: 16px 32px;
-      border-radius: var(--radius-pill);
-      font-size: 1.1rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(255,107,53,0.4);
-    }
-    
-    .form-note {
-      font-size: 0.85rem;
-      margin-top: var(--spacing-sm);
-      font-style: italic;
-      opacity: 0.8;
-    }
-    
-    .footer {
-      background: var(--deep-teal);
-      color: var(--white);
-      padding: var(--spacing-xl) 0 var(--spacing-md) 0;
-    }
-    
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: var(--spacing-xl);
-      margin-bottom: var(--spacing-lg);
-    }
-    
-    .footer-brand h3 {
-      font-size: 1.75rem;
-      margin-bottom: var(--spacing-sm);
-    }
-    
-    .footer-brand p {
-      font-size: 0.95rem;
-      opacity: 0.8;
-      line-height: 1.6;
-    }
-    
-    .footer-links h4 {
-      font-size: 1.1rem;
-      margin-bottom: var(--spacing-sm);
-      color: var(--orange);
-    }
-    
-    .footer-links ul {
-      list-style: none;
-    }
-    
-    .footer-links li {
-      margin-bottom: var(--spacing-xs);
-    }
-    
-    .footer-links a {
-      color: var(--white);
-      text-decoration: none;
-      opacity: 0.8;
-      transition: opacity 0.3s;
-    }
-    
-    .footer-links a:hover {
-      opacity: 1;
-    }
-    
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: var(--spacing-md);
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-    
-    @media (max-width: 1024px) {
-      .hero-left h1 {
-        font-size: 2.5rem;
-      }
-      .results-grid {
-        grid-template-columns: 1fr;
-      }
-      .identity-section {
-        grid-template-columns: 1fr;
-      }
-      .service-categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .nav {
-        display: none;
-      }
-      .mobile-menu {
-        display: block;
-      }
-      .hero-left h1 {
-        font-size: 2rem;
-      }
-      .hero-right {
-        height: 350px;
-      }
-      .service-categories-grid {
-        grid-template-columns: 1fr;
-      }
-      .category-icon-large {
-        width: 80px;
-        height: 80px;
-      }
-      .service-category-block h3 {
-        font-size: 1.3rem;
-      }
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zinara Digital Marketing - We help ambitious brands turn digital presence into measurable growth through data-driven marketing strategies. Trusted by 50+ businesses across Africa.">
+    <meta name="keywords" content="digital marketing agency Africa, SEO services Kenya, social media marketing, web design Africa, marketing automation, brand growth strategy, CRO optimization">
+    <title>Zinara Digital | Turn Visibility Into Revenue | Digital Marketing Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-deep-teal: #00303F;
+            --color-blush: #EDDFE0;
+            --color-sea-blue: #006B7D;
+            --color-orange: #FF6B35;
+            --color-aqua: #03A6A1;
+            --color-gray-accent: #7A7A7A;
+            --color-white: #FFFFFF;
+            --color-light-gray: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--color-deep-teal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--color-deep-teal);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.8rem 5%;
+            background: rgba(0, 48, 63, 0.98);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--color-white);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--color-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-aqua);
+        }
+
+        .nav-cta {
+            background: var(--color-orange);
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+            color: var(--color-white) !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #E85A2A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-white);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-blush) 0%, #F5E8E9 100%);
+            padding: 140px 5% 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 107, 125, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--color-deep-teal);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span {
+            color: var(--color-sea-blue);
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--color-gray-accent);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 107, 125, 0.15);
+        }
+
+        .trust-metric {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-metric strong {
+            font-size: 1.8rem;
+            color: var(--color-aqua);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .trust-metric span {
+            font-size: 0.9rem;
+            color: var(--color-gray-accent);
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            background: var(--color-orange);
+            color: var(--color-white);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #E85A2A;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-sea-blue);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--color-sea-blue);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-sea-blue);
+            color: var(--color-white);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-card {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 48, 63, 0.15);
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .visual-card.card-1 {
+            top: 10%;
+            left: 5%;
+            width: 200px;
+        }
+
+        .visual-card.card-2 {
+            bottom: 15%;
+            right: 10%;
+            width: 220px;
+        }
+
+        .visual-card.card-3 {
+            top: 40%;
+            right: 25%;
+            width: 180px;
+        }
+
+        .visual-card h4 {
+            font-size: 2rem;
+            color: var(--color-aqua);
+            margin-bottom: 0.3rem;
+        }
+
+        .visual-card p {
+            font-size: 0.9rem;
+            color: var(--color-gray-accent);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 5%;
+            background: var(--color-white);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.8rem;
+            color: var(--color-deep-teal);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-tagline {
+            font-size: 1.3rem;
+            color: var(--color-sea-blue);
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .about-description {
+            font-size: 1.1rem;
+            color: var(--color-gray-accent);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .mission-vision {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mission-box {
+            background: var(--color-light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-aqua);
+        }
+
+        .mission-box h4 {
+            font-size: 1.3rem;
+            color: var(--color-sea-blue);
+            margin-bottom: 0.8rem;
+        }
+
+        .mission-box p {
+            color: var(--color-gray-accent);
+            line-height: 1.7;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, var(--color-sea-blue) 0%, var(--color-aqua) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            padding: 3rem;
+            box-shadow: 0 15px 50px rgba(0, 107, 125, 0.3);
+        }
+
+        .about-visual-content {
+            text-align: center;
+        }
+
+        .about-visual-content h3 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-visual-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 100px 5%;
+            background: var(--color-light-gray);
+        }
+
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--color-deep-teal);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--color-gray-accent);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-card {
+            background: var(--color-white);
+            padding: 3rem 2.5rem;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0, 48, 63, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 48, 63, 0.15);
+        }
+
+        .process-number {
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            background: var(--color-orange);
+            color: var(--color-white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .process-card h3 {
+            font-size: 1.6rem;
+            color: var(--color-sea-blue);
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .process-card p {
+            color: var(--color-gray-accent);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .process-timeframe {
+            font-size: 0.9rem;
+            color: var(--color-aqua);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .process-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 5%;
+            background: var(--color-white);
+        }
+
+        .services-intro {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .services-intro h2 {
+            font-size: 2.8rem;
+            color: var(--color-deep-teal);
+            margin-bottom: 1.5rem;
+        }
+
+        .services-intro p {
+            font-size: 1.15rem;
+            color: var(--color-gray-accent);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            gap: 60px;
+        }
+
+        .service-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .service-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .service-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .service-content h3 {
+            font-size: 2.2rem;
+            color: var(--color-sea-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-hook {
+            font-size: 1.2rem;
+            color: var(--color-deep-teal);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-description {
+            font-size: 1.05rem;
+            color: var(--color-gray-accent);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .service-benefits {
+            background: var(--color-light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .service-benefits h4 {
+            font-size: 1.1rem;
+            color: var(--color-deep-teal);
+            margin-bottom: 1rem;
+        }
+
+        .service-benefits ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .service-benefits li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-gray-accent);
+        }
+
+        .service-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-aqua);
+            font-weight: bold;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background: var(--color-blush);
+            color: var(--color-sea-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .service-visual {
+            background: linear-gradient(135deg, var(--color-aqua) 0%, var(--color-sea-blue) 100%);
+            height: 400px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 4rem;
+            font-weight: 700;
+            box-shadow: 0 15px 50px rgba(3, 166, 161, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        /* Case Studies Section */
+        .cases-section {
+            padding: 100px 5%;
+            background: var(--color-light-gray);
+        }
+
+        .cases-grid {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .case-card {
+            background: var(--color-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 48, 63, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 48, 63, 0.15);
+        }
+
+        .case-image {
+            height: 240px;
+            background: linear-gradient(135deg, var(--color-sea-blue) 0%, var(--color-aqua) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .case-content {
+            padding: 2rem;
+        }
+
+        .case-content h3 {
+            font-size: 1.6rem;
+            color: var(--color-sea-blue);
+            margin-bottom: 0.8rem;
+        }
+
+        .case-content h4 {
+            font-size: 1.1rem;
+            color: var(--color-deep-teal);
+            margin-bottom: 1rem;
+        }
+
+        .case-content p {
+            color: var(--color-gray-accent);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-result {
+            background: var(--color-blush);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .case-result strong {
+            display: block;
+            font-size: 2rem;
+            color: var(--color-orange);
+            margin-bottom: 0.3rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .case-result span {
+            font-size: 0.95rem;
+            color: var(--color-gray-accent);
+        }
+
+        .cases-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 5%;
+            background: var(--color-white);
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 60px auto 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--color-light-gray);
+            padding: 2.5rem;
+            border-radius: 16px;
+            position: relative;
+            border-top: 4px solid var(--color-aqua);
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--color-blush);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--color-gray-accent);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--color-aqua);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h5 {
+            font-size: 1.1rem;
+            color: var(--color-deep-teal);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--color-gray-accent);
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: var(--color-sea-blue);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 5%;
+            background: var(--color-deep-teal);
+            color: var(--color-white);
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stats-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stats-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-orange);
+            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .stat-description {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 5%;
+            background: var(--color-light-gray);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            background: var(--color-white);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 48, 63, 0.1);
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-intro h3 {
+            font-size: 1.8rem;
+            color: var(--color-sea-blue);
+            margin-bottom: 1rem;
+        }
+
+        .form-intro p {
+            color: var(--color-gray-accent);
+            font-size: 1.05rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--color-deep-teal);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border: 2px solid var(--color-blush);
+            border-radius: 8px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-aqua);
+            box-shadow: 0 0 0 3px rgba(3, 166, 161, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-trust {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-gray-accent);
+            margin-top: 1rem;
+        }
+
+        .btn-submit {
+            background: var(--color-orange);
+            color: var(--color-white);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: #E85A2A;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-deep-teal);
+            color: var(--color-white);
+            padding: 60px 5% 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand h3 span {
+            color: var(--color-orange);
+        }
+
+        .footer-tagline {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .footer-contact p {
+            margin: 0.5rem 0;
+            opacity: 0.9;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-aqua);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--color-aqua);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--color-orange);
+            transform: translateY(-3px);
+        }
+
+        /* AI Chatbot */
+        .chatbot-trigger {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--color-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .chatbot-trigger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(255, 107, 53, 0.5);
+        }
+
+        .chatbot-window {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            height: 500px;
+            background: var(--color-white);
+            border-radius: 16px;
+            box-shadow: 0 10px 50px rgba(0, 48, 63, 0.2);
+            display: none;
+            flex-direction: column;
+            z-index: 998;
+            overflow: hidden;
+        }
+
+        .chatbot-window.active {
+            display: flex;
+        }
+
+        .chatbot-header {
+            background: var(--color-sea-blue);
+            color: var(--color-white);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h4 {
+            font-size: 1.1rem;
+        }
+
+        .chatbot-close {
+            cursor: pointer;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .chatbot-close:hover {
+            opacity: 1;
+        }
+
+        .chatbot-body {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            background: var(--color-light-gray);
+        }
+
+        .chat-message {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .message-bubble {
+            background: var(--color-white);
+            padding: 1rem;
+            border-radius: 12px;
+            max-width: 80%;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .quick-options {
+            display: grid;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .quick-option {
+            background: var(--color-white);
+            border: 2px solid var(--color-aqua);
+            color: var(--color-sea-blue);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .quick-option:hover {
+            background: var(--color-aqua);
+            color: var(--color-white);
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-visual {
+                height: 350px;
+            }
+
+            .service-item {
+                grid-template-columns: 1fr;
+            }
+
+            .service-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background: var(--color-deep-teal);
+                width: 100%;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .hero-trust {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-content h2,
+            .services-intro h2 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 40px 25px;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .chatbot-window {
+                width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 120px 5% 80px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .visual-card {
+                display: none;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .chatbot-trigger {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="#" class="logo">Zinara</a>
+    <!-- Header -->
+    <header id="header">
         <nav>
-          <ul class="nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact" class="btn btn-primary">Get Started</a></li>
-          </ul>
+            <div class="logo">ZINARA<span>.</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Our Work</a></li>
+                <li><a href="#contact" class="nav-cta">Let's Talk Growth</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
-        <button class="mobile-menu">☰</button>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <h1>Unleash Your Digital Potential — Where Visibility Meets Conversion.</h1>
-          <p class="subtext">Zinara Digital helps brands transform visibility into growth through strategic marketing ecosystems built for performance, not promises.</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Get Your Free Growth Audit</a>
-            <a href="#services" class="btn-text">Explore Our Services →</a>
-          </div>
-          <p class="trust-line">Trusted by 500+ global brands, startups, and creators.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1>
+                    Turn Digital Presence Into 
+                    <span>Measurable Growth</span>
+                </h1>
+                <p class="hero-subtitle">
+                    We help ambitious brands across Africa achieve real business results through data-driven marketing strategies, powerful web experiences, and intelligent automation.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn-primary">Schedule Your Free Strategy Call</a>
+                    <a href="#services" class="btn-secondary">Explore Services</a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-metric">
+                        <strong>50+</strong>
+                        <span>Businesses Grown</span>
+                    </div>
+                    <div class="trust-metric">
+                        <strong>250%</strong>
+                        <span>Avg. Revenue Increase</span>
+                    </div>
+                    <div class="trust-metric">
+                        <strong>98%</strong>
+                        <span>Client Retention Rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card card-1">
+                    <h4>+250%</h4>
+                    <p>Engagement Growth</p>
+                </div>
+                <div class="visual-card card-2">
+                    <h4>$4.20</h4>
+                    <p>ROI Per Dollar Spent</p>
+                </div>
+                <div class="visual-card card-3">
+                    <h4>12-14%</h4>
+                    <p>Conversion Rate</p>
+                </div>
+            </div>
         </div>
-        <div class="hero-right">
-          [HERO IMAGE PLACEHOLDER - Replace with actual image or video]
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="trust-band">
-    <div class="container">
-      <p class="trust-tagline">Powering global growth through trusted digital partnerships.</p>
-      <div class="logo-strip">
-        <span class="partner-logo">Google Partner</span>
-        <span class="partner-logo">Meta</span>
-        <span class="partner-logo">HubSpot</span>
-        <span class="partner-logo">Shopify</span>
-        <span class="partner-logo">Canva</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="identity-section" id="about">
-    <div class="identity-left">
-      <p class="identity-quote">"For those who refuse to stay invisible."</p>
-      <p class="identity-copy">Zinara helps entrepreneurs, creators, and businesses turn visibility into growth. We engineer digital ecosystems powered by strategy, storytelling, and precision — designed for those who refuse to stay invisible.</p>
-    </div>
-    <div class="identity-right">
-      <div class="mission-block">
-        <h3>Mission</h3>
-        <p>Amplify business stories through smart digital marketing that builds trust and drives growth.</p>
-      </div>
-      <div class="vision-block">
-        <h3>Vision</h3>
-        <p>A world where every business thrives with credible digital presence and global reach.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="results-section">
-    <div class="container">
-      <div class="results-grid">
-        <div class="results-left">
-          <h2>How We Drive Measurable Growth</h2>
-          <h3>We're not just an agency — we're your strategic ally.</h3>
-          <p>By combining creativity, technology, and data, we design systems that turn potential into performance and visibility into influence.</p>
-          <a href="#case-studies" class="btn btn-aqua">See Our Results</a>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-content fade-in">
+                <h2>Your Global Digital Growth Partner</h2>
+                <p class="about-tagline">"For those who refuse to stay invisible."</p>
+                <p class="about-description">
+                    Zinara helps entrepreneurs, creators, and businesses turn visibility into growth. We engineer digital ecosystems powered by strategy, storytelling, and precision — designed for those who refuse to stay invisible. Every brand has a story, and we bring it to life with insight, creativity, and measurable impact.
+                </p>
+                <p class="about-description">
+                    We combine local insight with global strategy to help brands grow without borders. By blending data with intuition, we design digital ecosystems that connect, engage, and convert — delivering clarity, consistency, and lasting impact for brands ready to grow with purpose.
+                </p>
+                <div class="mission-vision">
+                    <div class="mission-box">
+                        <h4>Mission</h4>
+                        <p>Amplify business stories through smart digital marketing that builds trust and drives growth.</p>
+                    </div>
+                    <div class="mission-box">
+                        <h4>Vision</h4>
+                        <p>To be a leading force in digital marketing, empowering brands to share their stories with authenticity, creativity, and purpose — inspiring meaningful connections that drive growth, trust, and lasting impact worldwide.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual fade-in">
+                <div class="about-visual-content">
+                    <h3>10+ Years</h3>
+                    <p>Combined Marketing Expertise</p>
+                    <p style="margin-top: 2rem; font-size: 1rem;">Trusted across 12 countries</p>
+                </div>
+            </div>
         </div>
-        <div class="metrics-box">
-          <div class="metric">
-            <span class="metric-number">50+</span>
-            <span class="metric-label">Businesses Grown</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">250%</span>
-            <span class="metric-label">Average Revenue Increase</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">98%</span>
-            <span class="metric-label">Client Retention Rate</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="testimonials-section" id="reviews">
-    <div class="container">
-      <h2 class="section-title">What Our Clients Say</h2>
-      <div class="testimonials-wrapper">
-        <div class="testimonial-card active">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Zinara redefined our event marketing success. Their automation and social media campaigns helped us sell out three major events and cut admin time by 60%."</p>
-          <p class="testimonial-author"><strong>Joseph Mwangi</strong>, Founder, UrbanTribe Events</p>
+    <!-- Process Section -->
+    <section class="process-section" id="process">
+        <div class="process-container">
+            <div class="section-header fade-in">
+                <h2>How We Grow Your Business</h2>
+                <p>Simple, transparent, and designed to deliver results fast</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-card fade-in">
+                    <div class="process-number">1</div>
+                    <h3>Audit & Quick Wins</h3>
+                    <p>We audit your funnel and deliver 3 quick wins you can apply immediately. Clarify your brand vision, identify gaps, and establish clear KPIs for growth.</p>
+                    <p class="process-timeframe">Day 0–7</p>
+                </div>
+                <div class="process-card fade-in">
+                    <div class="process-number">2</div>
+                    <h3>Custom Growth Plan</h3>
+                    <p>A tailored 30/90-day plan with projected ROI and clear milestones. We implement campaigns that scale with precision and strategic focus.</p>
+                    <p class="process-timeframe">Day 7</p>
+                </div>
+                <div class="process-card fade-in">
+                    <div class="process-number">3</div>
+                    <h3>Execute & Optimize</h3>
+                    <p>We run campaigns, optimize weekly, and report on revenue metrics. Data-driven improvement delivers lasting ROI and compounding results.</p>
+                    <p class="process-timeframe">Ongoing</p>
+                </div>
+            </div>
+            <div class="process-cta">
+                <a href="#contact" class="btn-primary">Let's Start Your Growth Journey</a>
+            </div>
         </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="services-intro fade-in">
+            <h2>Unleash Your Business Digital Potential</h2>
+            <p>At Zinara Digital, we craft strategies that turn visibility into momentum and marketing into measurable growth. Discover our comprehensive services tailored to meet your unique digital marketing needs.</p>
+        </div>
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-item">
+                <div class="service-content fade-in">
+                    <h3>Digital Marketing & Growth</h3>
+                    <p class="service-hook">Your customers spend 2.5 hours daily on social media. Other businesses are capturing their attention. Are you?</p>
+                    <p class="service-description">We turn social platforms into revenue channels. Strategic content that stops the scroll. Community management that builds trust. Ad campaigns that target buyers at the exact moment they're ready to act.</p>
+                    <div class="service-benefits">
+                        <h4>What you get:</h4>
+                        <ul>
+                            <li>Content that generates engagement and drives traffic to your site</li>
+                            <li>Ad targeting that reaches decision-makers, not just audiences</li>
+                            <li>Community management that turns followers into customers</li>
+                            <li>First-page SEO rankings for searches that actually convert</li>
+                        </ul>
+                    </div>
+                    <div class="service-tags">
+                        <span class="tag">Social Media Marketing</span>
+                        <span class="tag">SEO Services</span>
+                        <span class="tag">Paid Advertising</span>
+                        <span class="tag">Content Marketing</span>
+                    </div>
+                </div>
+                <div class="service-visual fade-in">
+                    📈
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-item">
+                <div class="service-content fade-in">
+                    <h3>Web Design & Conversion Optimization</h3>
+                    <p class="service-hook">97 out of 100 visitors leave without buying. Let's fix that.</p>
+                    <p class="service-description">Your website should work like a salesperson who never sleeps. We remove the confusion, eliminate the hesitation, and guide visitors smoothly from curiosity to checkout. Every click intentional. Every form field tested. Every CTA optimized.</p>
+                    <div class="service-benefits">
+                        <h4>What you get:</h4>
+                        <ul>
+                            <li>Websites built to convert, not just look pretty</li>
+                            <li>Landing pages that turn 8-12% of traffic into leads</li>
+                            <li>Mobile-responsive design that works flawlessly on every device</li>
+                            <li>Speed optimization for better user experience and SEO</li>
+                        </ul>
+                    </div>
+                    <div class="service-tags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">CRO Optimization</span>
+                        <span class="tag">Landing Pages</span>
+                        <span class="tag">UX/UI Design</span>
+                    </div>
+                </div>
+                <div class="service-visual fade-in">
+                    💻
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-item">
+                <div class="service-content fade-in">
+                    <h3>Marketing Automation & AI Intelligence</h3>
+                    <p class="service-hook">While others test and guess, you'll predict and scale.</p>
+                    <p class="service-description">We install intelligence into your marketing engine. Predictive models spot buying signals before competitors notice. Automation handles repetitive work at machine speed. Personalization delivers the right message to the right person without manual effort.</p>
+                    <div class="service-benefits">
+                        <h4>What you get:</h4>
+                        <ul>
+                            <li>Marketing that learns and improves automatically</li>
+                            <li>Behavioral insights that forecast what customers want next</li>
+                            <li>Campaigns that scale without scaling your workload</li>
+                            <li>CRM setup and integration for seamless customer journeys</li>
+                        </ul>
+                    </div>
+                    <div class="service-tags">
+                        <span class="tag">Marketing Automation</span>
+                        <span class="tag">AI Marketing</span>
+                        <span class="tag">Predictive Analytics</span>
+                        <span class="tag">CRM Setup</span>
+                    </div>
+                </div>
+                <div class="service-visual fade-in">
+                    🤖
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-item">
+                <div class="service-content fade-in">
+                    <h3>Virtual Assistant & Customer Success</h3>
+                    <p class="service-hook">Acquiring a new customer costs 5x more than keeping one you already have.</p>
+                    <p class="service-description">Our VAs handle the daily work of keeping customers happy and coming back. Reputation monitoring. Review responses. Follow-up sequences. Social engagement. The consistent touchpoints that turn one-time buyers into loyal advocates who refer without being asked.</p>
+                    <div class="service-benefits">
+                        <h4>What you get:</h4>
+                        <ul>
+                            <li>Reputation management that drives 30%+ more inbound inquiries</li>
+                            <li>Professional response systems that turn complaints into loyalty</li>
+                            <li>Automated follow-ups that bring customers back on schedule</li>
+                            <li>Email marketing campaigns that nurture and convert</li>
+                        </ul>
+                    </div>
+                    <div class="service-tags">
+                        <span class="tag">Virtual Assistant</span>
+                        <span class="tag">Reputation Management</span>
+                        <span class="tag">CRM Management</span>
+                        <span class="tag">Email Marketing</span>
+                    </div>
+                </div>
+                <div class="service-visual fade-in">
+                    🎯
+                </div>
+            </div>
+        </div>
+        <div class="process-cta" style="margin-top: 60px;">
+            <a href="#contact" class="btn-primary">Explore All Services</a>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="cases-section" id="work">
+        <div class="section-header fade-in">
+            <h2>Real Results. Real Growth.</h2>
+            <p>Explore our successful campaigns and the measurable impact we've delivered for businesses across Africa</p>
+        </div>
+        <div class="cases-grid">
+            <div class="case-card fade-in">
+                <div class="case-image">🚀</div>
+                <div class="case-content">
+                    <h3>SEO Campaign for Tech Startup</h3>
+                    <h4>Increasing Online Visibility</h4>
+                    <p>Our SEO campaign for a tech startup resulted in significant organic traffic growth and improved search engine rankings through targeted keyword strategy and quality content.</p>
+                    <div class="case-result">
+                        <strong>+180%</strong>
+                        <span>Organic Traffic Growth</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card fade-in">
+                <div class="case-image">👗</div>
+                <div class="case-content">
+                    <h3>Social Media for Fashion Brand</h3>
+                    <h4>Elan Bags Success Story</h4>
+                    <p>Through strategic content and social campaigns, we doubled engagement and transformed their lookbook into a reliable sales channel with measurable revenue impact.</p>
+                    <div class="case-result">
+                        <strong>+250%</strong>
+                        <span>Online Sales Growth</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card fade-in">
+                <div class="case-image">🛒</div>
+                <div class="case-content">
+                    <h3>Content Marketing for E-Commerce</h3>
+                    <h4>Driving Conversions Through Content</h4>
+                    <p>Our content marketing efforts generated a significant boost in conversion rates and customer retention by creating valuable, engaging content that established brand loyalty.</p>
+                    <div class="case-result">
+                        <strong>+165%</strong>
+                        <span>Conversion Rate Increase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cases-cta">
+            <a href="#contact" class="btn-primary">See More Case Studies</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-header fade-in">
+            <h2>What Our Clients Say About Zinara Digital</h2>
+            <p>Our clients share their success stories and experiences working with us</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Working with Zinara Digital transformed how families find our care. Their social media work, customer care, and online reputation management amplified our message, increased trust, and helped us connect with more families through prompt, compassionate support.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h5>Medvera Homecare Team</h5>
+                            <p class="company-name">Medvera Homecare</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Zinara Digital lifted our brand visibility beyond expectations. Their content and social strategy doubled engagement and grew online sales by 250% in three months, turning our lookbook into a reliable sales channel.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">B</div>
+                        <div class="author-info">
+                            <h5>Bridget Waceke</h5>
+                            <p>Managing Director, <span class="company-name">Elan Bags</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Zinara Digital sold out three major events with targeted campaigns and automation. We reduced admin time by 60% and could focus on the event experience.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h5>Joseph Mwangi</h5>
+                            <p>Founder, <span class="company-name">UrbanTribe Events</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Zinara's digital overhaul boosted our monthly clients by 40% and streamlined bookings with automation, making daily operations much smoother.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h5>Azma Suleiman</h5>
+                            <p>Operations Manager, <span class="company-name">GlamFix Beauty Parlour</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <h2>How We Drive Measurable Growth</h2>
+            <p class="stats-subtitle">We're not just an agency — we're your strategic ally</p>
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Businesses Grown</div>
+                    <p class="stat-description">Across 12 countries</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">250%</div>
+                    <div class="stat-label">Average Revenue Increase</div>
+                    <p class="stat-description">Data-driven results</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Retention Rate</div>
+                    <p class="stat-description">Long-term partnerships</p>
+                </div>
+            </div>
+            <p style="margin-top: 3rem; font-size: 1.1rem;">We diagnose funnels, execute targeted campaigns, and run continual testing for compounding results.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-header fade-in">
+            <h2>Let's Grow Your Brand Today</h2>
+            <p>At Zinara Digital, we engineer digital ecosystems that amplify presence, accelerate conversions, and scale retention</p>
+        </div>
+        <div class="contact-container fade-in">
+            <div class="form-intro">
+                <h3>Book Your Free 15-Minute Strategy Call</h3>
+                <p>No obligation. We'll respond as soon as we can.</p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company / Website (Optional)</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="message">How can we help you grow?</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Let's Talk Growth</button>
+                <p class="form-trust">🔒 Your information is 100% confidential</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>ZINARA<span>.</span></h3>
+                <p class="footer-tagline">Your digital growth partner.</p>
+                <div class="footer-contact">
+                    <p>📞 +254 704 878 872</p>
+                    <p>📧 hello@zinara-digital.com</p>
+                    <p>📍 Nairobi, Kenya</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#accessibility">Accessibility Statement</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Zinara Digital Marketing. All rights reserved. | Global Digital Growth, Simplified.</p>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-trigger" id="chatbotTrigger">💬</div>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h4>Hi! How can we help? 👋</h4>
+            <span class="chatbot-close" id="chatbotClose">×</span>
+        </div>
+        <div class="chatbot-body">
+            <div class="chat-message">
+                <div class="message-bubble">
+                    Welcome to Zinara Digital! I'm here to help you find the perfect growth solution for your business. What would you like to know?
+                </div>
+            </div>
+            <div class="quick-options">
+                <div class="quick-option" onclick="handleQuickOption('services')">📊 Explore Services</div>
+                <div class="quick-option" onclick="handleQuickOption('pricing')">💰 Pricing & Packages</div>
+                <div class="quick-option" onclick="handleQuickOption('results')">📈 View Results</div>
+                <div class="quick-option" onclick="handleQuickOption('consultation')">📞 Book Free Consultation</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
         
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Zinara transformed our salon's digital journey. Customer base grew by 40%, and automation improved efficiency across all departments."</p>
-          <p class="testimonial-author"><strong>Azma Suleiman</strong>, Operations Manager, GlamFix Beauty Parlour</p>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Working with Zinara Digital Marketing transformed how families find our care. Their social media work, customer care, and online reputation management amplified our message, increased trust, and helped us connect with more families through prompt, compassionate support."</p>
-          <p class="testimonial-author"><strong>Medvera Homecare Team</strong></p>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Zinara lifted our brand visibility beyond expectations. Their content and social strategy doubled engagement and grew online sales by 250% in three months, turning our lookbook into a reliable sales channel."</p>
-          <p class="testimonial-author"><strong>Bridget Waceke</strong>, Managing Director, Elan Bags</p>
-        </div>
-      </div>
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="prevBtn">‹</button>
-        <button class="carousel-btn" id="nextBtn">›</button>
-      </div>
-    </div>
-  </section>
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
 
-  <section class="services-section" id="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="services-intro-text">Comprehensive digital marketing solutions organized into four strategic pillars designed to build, engage, and retain your ideal customers.</p>
-      
-      <div class="service-categories-grid">
-        <div class="service-category-block">
-          <svg class="category-icon-large" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="48" fill="#03A6A1" opacity="0.1"/>
-            <path d="M 30 50 L 45 65 L 70 35" stroke="#03A6A1" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="50" cy="50" r="35" stroke="#03A6A1" stroke-width="3" fill="none"/>
-          </svg>
-          <h3>Visibility & Authority</h3>
-          <p>SEO mastery, high-ROI paid ads, and authority content that builds trust and dominates search rankings.</p>
-        </div>
-        
-        <div class="service-category-block">
-          <svg class="category-icon-large" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="48" fill="#FF6B35" opacity="0.1"/>
-            <rect x="25" y="30" width="50" height="40" rx="4" stroke="#FF6B35" stroke-width="3" fill="none"/>
-            <line x1="25" y1="42" x2="75" y2="42" stroke="#FF6B35" stroke-width="3"/>
-            <circle cx="35" cy="36" r="2.5" fill="#FF6B35"/>
-            <circle cx="43" cy="36" r="2.5" fill="#FF6B35"/>
-            <circle cx="51" cy="36" r="2.5" fill="#FF6B35"/>
-          </svg>
-          <h3>Engagement & Conversion</h3>
-          <p>Conversion-focused web design, automation integration, and social funnels that turn visitors into customers.</p>
-        </div>
-        
-        <div class="service-category-block">
-          <svg class="category-icon-large" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="48" fill="#006B7D" opacity="0.1"/>
-            <path d="M 30 45 L 50 58 L 70 45" stroke="#006B7D" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="30" y="40" width="40" height="28" rx="3" stroke="#006B7D" stroke-width="3" fill="none"/>
-          </svg>
-          <h3>Retention & Expansion</h3>
-          <p>Email nurture flows, customer care, and reputation management that maximize lifetime value.</p>
-        </div>
-        
-        <div class="service-category-block">
-          <svg class="category-icon-large" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="48" fill="#03A6A1" opacity="0.1"/>
-            <circle cx="35" cy="50" r="15" stroke="#03A6A1" stroke-width="3" fill="none"/>
-            <circle cx="60" cy="35" r="10" stroke="#03A6A1" stroke-width="3" fill="none"/>
-            <circle cx="60" cy="65" r="10" stroke="#03A6A1" stroke-width="3" fill="none"/>
-            <line x1="48" y1="45" x2="53" y2="40" stroke="#03A6A1" stroke-width="3" stroke-linecap="round"/>
-            <line x1="48" y1="55" x2="53" y2="60" stroke="#03A6A1" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <h3>AI & Digital Transformation</h3>
-          <p>AI advisory and smart tools that future-proof your business and unlock new growth opportunities.</p>
-        </div>
-      </div>
-      
-      <div class="see-all-services">
-        <a href="#all-services" class="btn btn-secondary btn-large">See All Services</a>
-      </div>
-    </div>
-  </section>
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
 
-  <section class="final-cta-section" id="contact">
-    <div class="container">
-      <h2 class="section-title">Real Numbers. Real Growth.</h2>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number">300%</span>
-          <span class="stat-label">Average Revenue Growth (6 Months)</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">98%</span>
-          <span class="stat-label">Client Retention Rate</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Brands Scaled</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">40%</span>
-          <span class="stat-label">Cost-Per-Lead Reduction</span>
-        </div>
-      </div>
-      <div class="cta-form-wrapper">
-        <h3>Ready to Grow Your Business?</h3>
-        <p class="subtext">Get a free 15-minute growth audit and 3 actionable quick wins.</p>
-        <form class="audit-form" id="auditForm">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" placeholder="Business Email" required>
-          </div>
-          <div class="form-group">
-            <input type="text" name="website" placeholder="Website/Brand" required>
-          </div>
-          <button type="submit" class="form-submit">Get My Audit</button>
-          <p class="form-note">Our Track Record Speaks — No spam. Just strategy.</p>
-        </form>
-      </div>
-    </div>
-  </section>
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>Zinara</h3>
-          <p>Digital Marketing Agency</p>
-          <p style="margin-top: 16px;">Transforming visibility into measurable growth through strategic marketing ecosystems.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Case Studies</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#privacy">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#services">SEO Optimization</a></li>
-            <li><a href="#services">Paid Advertising</a></li>
-            <li><a href="#services">Web Design</a></li>
-            <li><a href="#services">Automation</a></li>
-            <li><a href="#services">Content Marketing</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Contact</h4>
-          <ul>
-            <li>hello@zinaradigital.com</li>
-            <li>+254 700 000 000</li>
-            <li>Global</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Zinara Digital Marketing. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
 
-  <script>
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const nav = document.querySelector('.nav');
-    
-    mobileMenu.addEventListener('click', function() {
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
-      } else {
-        nav.style.display = 'flex';
-        nav.style.flexDirection = 'column';
-        nav.style.position = 'absolute';
-        nav.style.top = '60px';
-        nav.style.left = '0';
-        nav.style.right = '0';
-        nav.style.background = 'var(--deep-teal)';
-        nav.style.padding = '20px';
-      }
-    });
-    
-    let currentTestimonial = 0;
-    const testimonials = document.querySelectorAll('.testimonial-card');
-    const totalTestimonials = testimonials.length;
-    
-    function showTestimonial(index) {
-      testimonials.forEach(card => card.classList.remove('active'));
-      if (index >= totalTestimonials) {
-        currentTestimonial = 0;
-      } else if (index < 0) {
-        currentTestimonial = totalTestimonials - 1;
-      } else {
-        currentTestimonial = index;
-      }
-      testimonials[currentTestimonial].classList.add('active');
-    }
-    
-    document.getElementById('nextBtn').addEventListener('click', function() {
-      showTestimonial(currentTestimonial + 1);
-    });
-    
-    document.getElementById('prevBtn').addEventListener('click', function() {
-      showTestimonial(currentTestimonial - 1);
-    });
-    
-    setInterval(function() {
-      showTestimonial(currentTestimonial + 1);
-    }, 6000);
-    
-    document.getElementById('auditForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = {
-        name: this.name.value,
-        email: this.email.value,
-        website: this.website.value
-      };
-      console.log('Form submitted:', formData);
-      alert('Thank you! We\'ll be in touch within 24 hours with your free growth audit.');
-      this.reset();
-    });
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const headerOffset = 80;
-          const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Fade-in Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Chatbot Functionality
+        const chatbotTrigger = document.getElementById('chatbotTrigger');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotClose = document.getElementById('chatbotClose');
+
+        chatbotTrigger.addEventListener('click', () => {
+            chatbotWindow.classList.toggle('active');
+            chatbotTrigger.style.display = chatbotWindow.classList.contains('active') ? 'none' : 'flex';
+        });
+
+        chatbotClose.addEventListener('click', () => {
+            chatbotWindow.classList.remove('active');
+            chatbotTrigger.style.display = 'flex';
+        });
+
+        // Chatbot Quick Options Handler
+        function handleQuickOption(option) {
+            const chatBody = document.querySelector('.chatbot-body');
+            let response = '';
+            
+            switch(option) {
+                case 'services':
+                    response = `Great! We offer four main service categories:
+                    
+                    📊 Digital Marketing & Growth (SEO, Social Media, Paid Ads)
+                    💻 Web Design & Conversion Optimization
+                    🤖 Marketing Automation & AI Intelligence
+                    🎯 Virtual Assistant & Customer Success
+                    
+                    Which area interests you most?`;
+                    break;
+                case 'pricing':
+                    response = `Our pricing is customized based on your specific needs and goals. We offer flexible packages starting from tailored solutions for startups to comprehensive growth plans for established businesses.
+                    
+                    Book a free 15-minute consultation, and we'll create a custom proposal with projected ROI for your business.`;
+                    break;
+                case 'results':
+                    response = `We're proud of the results we deliver:
+                    
+                    ✅ 50+ businesses grown across 12 countries
+                    ✅ 250% average revenue increase
+                    ✅ 98% client retention rate
+                    ✅ Landing pages converting at 8-12%
+                    
+                    Want to see specific case studies?`;
+                    break;
+                case 'consultation':
+                    window.location.href = '#contact';
+                    response = `Perfect! I'm directing you to our contact form. Fill it out, and we'll schedule your free 15-minute strategy call within 24 hours. No obligation!`;
+                    break;
+            }
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'chat-message';
+            messageDiv.innerHTML = `<div class="message-bubble">${response}</div>`;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
         }
-      });
-    });
-    
-    let lastScroll = 0;
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.header');
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > 50) {
-        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
-      } else {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-      }
-      lastScroll = currentScroll;
-    });
-  </script>
 
+        // Form Submission Handler
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Show success message
+            alert(`Thank you, ${formData.firstName}! We've received your message and will get back to you within 24 hours. Check your email for confirmation.`);
+            
+            // Reset form
+            contactForm.reset();
+            
+            // In production, you would send this data to your backend
+            console.log('Form submitted:', formData);
+        });
+
+        // Dynamic Stats Counter Animation
+        function animateCounter(element, target, duration = 2000) {
+            let current = 0;
+            const increment = target / (duration / 16);
+            const isPercentage = element.textContent.includes('%');
+            const hasPlus = element.textContent.includes('+');
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                let displayValue = Math.floor(current);
+                if (isPercentage) displayValue += '%';
+                if (hasPlus) displayValue = displayValue + '+';
+                
+                element.textContent = displayValue;
+            }, 16);
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.textContent);
+                        animateCounter(stat, target);
+                    });
+                    entry.target.dataset.animated = 'true';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Add hover effect to service cards
+        document.querySelectorAll('.service-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.01)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroVisual = document.querySelector('.hero-visual');
+            if (heroVisual && scrolled < 800) {
+                heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Track scroll depth for analytics
+        let maxScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                // In production, send this to your analytics
+                if (maxScroll > 25 || maxScroll > 50 || maxScroll > 75 || maxScroll > 90) {
+                    console.log(`User scrolled to ${Math.round(maxScroll)}%`);
+                }
+            }
+        });
+
+        // CTA Click Tracking
+        document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(button => {
+            button.addEventListener('click', (e) => {
+                // In production, send this to your analytics
+                console.log('CTA clicked:', e.target.textContent, 'Location:', e.target.closest('section')?.id || 'header');
+            });
+        });
+
+        // Service card interaction tracking
+        document.querySelectorAll('.service-item').forEach((item, index) => {
+            item.addEventListener('click', () => {
+                console.log(`Service card ${index + 1} interacted`);
+            });
+        });
+
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            // Trigger initial animations for elements in viewport
+            document.querySelectorAll('.fade-in').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+
+        // Adaptive CTA based on scroll behavior
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                
+                // If user scrolls past 80% and hasn't interacted with contact form
+                if (scrollPercent > 80 && !sessionStorage.getItem('contactFormViewed')) {
+                    // Could trigger a subtle modal or notification
+                    console.log('User highly engaged - could show special offer');
+                }
+            }, 150);
+        });
+
+        // Track time on page
+        let timeOnPage = 0;
+        setInterval(() => {
+            timeOnPage++;
+            if (timeOnPage === 30 || timeOnPage === 60 || timeOnPage === 120) {
+                console.log(`User has been on page for ${timeOnPage} seconds`);
+                // In production, send to analytics
+            }
+        }, 1000);
+
+        // Form field engagement tracking
+        const formFields = document.querySelectorAll('#contactForm input, #contactForm textarea');
+        formFields.forEach(field => {
+            field.addEventListener('focus', () => {
+                if (!sessionStorage.getItem('formEngaged')) {
+                    sessionStorage.setItem('formEngaged', 'true');
+                    console.log('User started engaging with contact form');
+                }
+            });
+        });
+
+        // Exit intent detection (when mouse leaves viewport)
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 10 && !sessionStorage.getItem('exitIntentShown')) {
+                sessionStorage.setItem('exitIntentShown', 'true');
+                console.log('Exit intent detected - could show retention offer');
+                // In production, could trigger a modal with special offer
+            }
+        });
+
+        // SEO-friendly content loading confirmation
+        console.log('%cZinara Digital Website Loaded Successfully', 'color: #FF6B35; font-size: 16px; font-weight: bold;');
+        console.log('%cOptimized for Conversion | Built with CRO Best Practices', 'color: #006B7D; font-size: 12px;');
+    </script>
 </body>
-</html>
+</html><h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#work">Our Work</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Digital Marketing</a></li>
+                    <li><a href="#services">Web Design & CRO</a></li>
+                    <li><a href="#services">Marketing Automation</a></li>
+                    <li><a href="#services">Virtual Assistant</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
